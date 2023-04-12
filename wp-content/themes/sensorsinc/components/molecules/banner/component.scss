@@ -1,0 +1,77 @@
+.hero {
+
+  &.int-header {
+    .hero__container {
+      background-color: var(--color-base-darkest);
+    
+    }
+  }
+  &__container {
+    position: relative;
+    padding: rem(48);
+
+    @include brkpnt-xs {
+      padding: rem(80) rem(142);
+    }
+  }
+  &__txt {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 0 rem(16);
+    @media print {
+      color: black;
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+  &__tagline {
+    text-transform: uppercase;
+    font-family: var(--font-secondary);
+
+    @include brkpnt-md {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    color: white;
+    line-height: 3rem;
+    font-size: var(--text-md);
+    letter-spacing: 0.125rem;
+    max-width: 88.75rem;
+    margin: 0 auto;
+
+    @include brkpnt-md {
+      line-height: 6rem;
+      font-size: var(--text-xl);
+      letter-spacing: inherit;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/temp/hero-img.jpg);
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00000026;
+      
+    }
+  }
+}

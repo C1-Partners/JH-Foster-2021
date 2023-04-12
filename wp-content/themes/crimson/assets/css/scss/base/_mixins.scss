@@ -1,0 +1,87 @@
+/* Input Placeholder Color */
+@mixin inputPlaceholder($color) {
+	&::-webkit-input-placeholder { color: $color; }
+	&::-moz-placeholder { color: $color; }
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; }
+}
+
+/* List Reset */
+@mixin resetList() {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+@mixin resetButton() {
+	-webkit-appearance: none;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+}
+@mixin resetField(){
+	-webkit-appearance: none;
+	border: 0;
+	padding: 0;
+	background: transparent;
+}
+
+@mixin transition($property: all, $timing: .3s, $easing: ease){
+	transition: $property $timing $easing;
+}
+
+/* 2D Transform - Translate */
+@mixin translate($translate-x, $translate-y) {
+	transform: translate($translate-x, $translate-y);
+}
+
+/* RGBA Colors */
+@mixin background-opacity($color, $opacity: 0.3) {
+	background-color: $color;
+	background-color: rgba($color, $opacity);
+}
+
+/* Columns */
+@mixin column($columns, $gap) {
+	column-count: $columns;
+	column-gap: $gap;
+}
+
+/* Absolute positioning over images/divs */
+@mixin floatOverImage() {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*three arrows before*/
+
+@mixin threeArrows() {
+	&:before {
+		content: "";
+		position: absolute;
+		width: 40px;
+		height: 100%;
+		background: url(../images/three-arrows.svg) no-repeat 100%;
+		left: -26px;
+		top: 0;
+	}
+}
+
+/* use SVG */
+@mixin addSVGBefore($path) {
+	&:before {
+		content: '';
+		position: absolute;
+		width: 13px;
+		height: 100%;
+		background: url($path) no-repeat 100%;
+		left:0;
+		top: 0;
+	}
+}

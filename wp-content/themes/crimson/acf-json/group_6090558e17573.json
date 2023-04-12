@@ -1,0 +1,62 @@
+{
+    "key": "group_6090558e17573",
+    "title": "Events",
+    "fields": [
+        {
+            "key": "field_60dc6a4198a5c",
+            "label": "Register Link",
+            "name": "reg_link",
+            "type": "text",
+            "instructions": "Paste in the full link where the user can register for the event. This is used on event page as well as on the events index.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60dc7549cb774",
+            "label": "Register Text",
+            "name": "reg_text",
+            "type": "text",
+            "instructions": "Enter optional button text to be shown on the event page as well as on the events index.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1625247978
+}

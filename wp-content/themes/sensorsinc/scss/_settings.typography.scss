@@ -1,0 +1,223 @@
+/*--------------------------------------------------------------
+>>> Typography:
+----------------------------------------------------------------
+# Type Scale
+# Generic Type Styles
+# Heading Styles
+# Base body styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Type Scale
+    > Variables for fonts
+    > Variable for base font-size
+    > Variable for scaling ratio
+    > Type scale based on font-size and scaling ratio
+    > Variables for line-heights
+    > Breakpoints to adjust typesetting
+--------------------------------------------------------------*/
+:root {
+  // Fonts, embedded in head through Adobe Fonts
+  --font-primary: 'Roboto Flex', sans-serif;
+  --font-secondary: oswald, "Times New Roman", sans-serif;
+
+  // Base font-size for site, 18px
+  --text-base-size: 1.125rem;
+
+  // Base scaling ratio, major third
+  --text-scale-ratio: 1.25;
+
+  // type scale, based on mobile font-sizes
+  --text-xs: calc((var(--text-base-size) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 11px
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 14px
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)); // 18px
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // 23px
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // 28px
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 35px
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 44px
+
+  // line-heights
+  --heading-line-height-lg: calc(2px + 2ex + 2px);
+  --heading-line-height-sm: calc(0.5px + 2ex + 0.5px);
+  --base-line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+Increase font-size @ specified breakpoints
+--------------------------------------------------------------*/
+@include brkpnt-sm {
+  :root {
+    --text-base-size: 1.1875rem; // 19px
+    --text-scale-ratio: 1.25; // major third
+  }
+}
+
+@include brkpnt-lg {
+  :root {
+    --text-scale-ratio: 1.333; // perfect fourth
+  }
+}
+
+/*--------------------------------------------------------------
+# Generic Type Styles
+--------------------------------------------------------------*/
+p,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: break-word; // Helps prevent overflow of long words/names/URLs
+  // hyphens: auto; // Helps prevent overflow of long words/names/URLs, but not supported for all languages
+  margin-top: 0;
+}
+
+body {
+  @include font-settings(var(--font-primary), 400);
+  font-size: var(--text-base-size);
+  line-height: 1.5;
+  color: var(--color-base-dark);
+  font-feature-settings: "lnum";
+
+  @media print {
+    &,
+    * {
+      color: black !important;
+      font-family: "Garamond", serif !important;
+      border: none !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      height: auto;
+      max-width: 100%;
+      text-align: left !important;
+    }
+    li {
+      padding-left: 1rem !important;
+    }
+  }
+}
+
+// Base paragraph spacing
+p {
+  margin-bottom: var(--space-md);
+}
+
+strong {
+  font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+# Heading Styles
+    > h1-h6
+    > Heading utility clases (.h1-.h6)
+--------------------------------------------------------------*/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @include font-settings(var(--font-secondary), 700);
+  color: var(--color-base-darkest);
+  line-height: var(--heading-line-height-sm);
+  margin-bottom: var(--space-xs);
+}
+
+h1,
+.h1 {
+  font-size: var(--text-xxl);
+  letter-spacing: rem(-2);
+  margin-bottom: var(--space-xxs);
+}
+
+h2,
+.h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xxs);
+}
+
+h3,
+.h3 {
+  font-size: var(--text-lg);
+  line-height: var(--heading-line-height-lg);
+  // @include font-settings(var(--font-primary), 600);
+}
+
+h4,
+.h4 {
+  font-size: var(--text-lg);
+  line-height: var(--heading-line-height-lg);
+  // @include font-settings(var(--font-primary), 600);
+  font-size: var(--text-md);
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  font-size: var(--text-base-size);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+Heading spacing
+    > Spacing between basic typographic elements
+    > Includes heading utility classes
+    > Padding used to avoid clashing margins
+--------------------------------------------------------------*/
+p + h2,
+ul + h2,
+ol + h2,
+p + .h2,
+ul + .h2,
+ol + .h2,
+p + h3,
+ul + h3,
+ol + h3,
+p + .h3,
+ul + .h3,
+ol + .h3,
+p + h4,
+ul + h4,
+ol + h4,
+p + .h4,
+ul + .h4,
+ol + .h4,
+p + h5,
+ul + h5,
+ol + h5,
+p + .h5,
+ul + .h5,
+ol + .h5,
+p + h6,
+ul + h6,
+ol + h6,
+p + .h6,
+ul + .h6,
+ol + .h6 {
+  padding-top: var(--space-sm);
+}
+
+/*--------------------------------------------------------------
+Print spacing for headings
+--------------------------------------------------------------*/
+@media print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 rem(8);
+  }
+}

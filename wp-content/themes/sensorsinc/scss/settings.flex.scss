@@ -1,0 +1,14 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    
+    &__item {
+        width: 24%;
+        flex-grow: 1;
+        min-height: 120px;
+        box-sizing: border-box;
+        margin: 0 5px 10px;
+        justify-content: space-between;
+    }
+}

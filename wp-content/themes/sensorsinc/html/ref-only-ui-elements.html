@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      main {
+        max-width: 836px;
+        padding: 0 20px;
+        margin: 52px auto;
+      }
+
+      h1 + .button,
+      .button + h1 {
+        margin-top: 24px;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/icp0jla.css" />
+    <!-- End Fonts -->
+
+    <title>UI Elements - REFERENCE ONLY</title>
+  </head>
+  <body>
+    <main>
+      <p>
+        Matriculated students — students enrolled in a degree program — <em>italic - register</em> for courses to fulfill requirements in their selected majors. Matriculated students are assigned an
+        academic adviser in their major, and work with the adviser to develop <a href="#">a program of study</a>.
+      </p>
+      <div class="form__element">
+        <label class="form__label" for="text-input-1">Text input label</label>
+        <input type="text" class="form__input input--text" name="text-input" id="text-input-1" />
+      </div>
+
+      <div class="form__element error">
+        <label class="form__label" for="error-input-1">Text input label</label>
+        <input type="text" class="form__input input--text" name="text-input" id="error-input-1" />
+        <p class="form__mssg">Not entered correctly</p>
+      </div>
+
+      <div class="form__element">
+        <label class="form__label" for="textarea-input-1">Textarea input label</label>
+        <textarea class="form__input input--textarea" name="textarea-txt-1" id="textarea-input-1"></textarea>
+      </div>
+
+      <div class="form__element element--checkbox">
+        <input class="form__input input--checkbox" type="checkbox" id="checkbox-1" name="checkbox-choice" value="option1" />
+
+        <label class="form__label label--checkbox" for="checkbox-1">
+          Option 1
+          <svg xmlns="http://www.w3.org/2000/svg" width="24.595" height="24.297" viewbox="0 0 24.595 24.297" aria-hidden="true" focusable="false" class="form__ico ico ico--checkmark">
+            <title>Checkmark</title>
+            <g transform="translate(-206.705 -4334.706)"><path class="ico__path" d="M230.255,4335.75l-15.092,21.559a2.2,2.2,0,0,1-3.569.059l-3.839-5.118" /></g>
+          </svg>
+        </label>
+      </div>
+
+      <div class="form__element element--radio">
+        <input type="radio" name="radio-choice" id="radio-1" value="option01" class="form__input input--radio" />
+        <label class="form__label label--radio" for="radio-1">Option 1</label>
+      </div>
+
+      <div class="form__element">
+        <label class="form__label label--selectbox" for="selectbox-1">State</label>
+        <select name="state" class="form__input input--selectbox" id="selectbox-1">
+          <option value="">- Select -</option>
+          <option value="value1">Option 1</option>
+          <option value="value2">Option 2</option>
+          <option value="value3">Option 3</option>
+        </select>
+      </div>
+
+      <div>
+        <a href="#" class="btn">Contact Us</a>
+        <button type="button" class="btn">Contact Us</button>
+      </div>
+
+      <div>
+        <a href="#" class="btn btn--secondary">Contact Us</a>
+        <button type="button" class="btn btn--secondary">Contact Us</button>
+      </div>
+
+      <div>
+        <a href="#" class="btn btn--outline">Contact Us</a>
+        <button type="button" class="btn btn--outline">Contact Us</button>
+      </div>
+    </main>
+  </body>
+</html>

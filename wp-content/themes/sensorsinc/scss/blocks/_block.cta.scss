@@ -1,0 +1,41 @@
+.int-cta {
+    position: relative;
+    border: 2px solid var(--color-primary);
+    margin: var(--space-xl) 0 var(--space-sm);
+    padding: var(--space-md);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    color: var(--color-base-white);
+
+   @include brkpnt-md {
+    padding: var(--space-xl);
+   }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-overlay-dark);
+        opacity: 0.85;
+        z-index: -1;
+      }
+      
+      &__inner {
+        @include brkpnt-md {
+          max-width: 75%;
+        }
+        p {
+          font-size: var(--text-lg);
+          font-family: var(--font-secondary);
+        }
+        .btn-row {
+            display: flex;
+        }
+      }
+    
+}

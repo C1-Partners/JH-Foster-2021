@@ -1,0 +1,10 @@
+
+
+//marketo blog form styling
+.single {
+    .blog-form-outer {
+        @include media-breakpoint-up(lg) {
+            margin-top: 120px;
+        }
+    }
+}

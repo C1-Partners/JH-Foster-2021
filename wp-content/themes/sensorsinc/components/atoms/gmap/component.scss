@@ -1,0 +1,39 @@
+.btn {
+  &--close {
+    background-color: var(--color-primary);
+    padding: rem(15) rem(16) rem(12);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--color-primary-darker);
+    }
+
+    &:active,
+    &:focus {
+      outline: var(--brdr-sm) solid var(--color-primary-light);
+    }
+
+    .btn__ico {
+      display: block;
+      margin-bottom: rem(4);
+
+      path {
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: rem(1.5);
+      }
+    }
+  }
+}
+
+.acf-map {
+  h3 {
+    color: var(--color-primary);
+    font-size: 1rem;
+  }
+  p {
+    color: var(--color-primary);
+  }
+}

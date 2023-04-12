@@ -1,0 +1,320 @@
+/*Styles for Nursing Jobs Block*/
+
+.block-product-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    .disclaimer {
+        font-size: 1.1rem;
+    }
+
+    .block-search-heading {
+        text-transform: uppercase;
+        color: $color-primary;
+        font-weight: 600;
+        padding: 15px 0 30px;
+    }
+
+    .product-search-bar {
+        display: block;
+        padding-bottom:40px;
+        padding-top:40px;
+
+        @include media-breakpoint-up(lg) {
+            display:flex;
+        }
+
+        .product-search-input {
+            display: block;
+            width: 100%;
+            padding: 1rem 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #F7F6F0;
+            background-clip: padding-box;
+            border: 0 solid #ced4da;
+            border-radius: 0;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline:none;
+            }
+        }
+
+        .product-submit {
+            margin: 0;
+            display: inline-block;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+        }
+    }
+
+    .export-row {
+        display: flex;
+        justify-content: center;
+
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-end;
+        }
+
+        .clear-all {
+            color: $color-primary;
+            margin-right: 8px;
+
+            &:hover {
+                color: $color-white;
+            }
+
+        }
+    }
+
+    .job-filters {
+        border-width: 0 1px 0 0;
+        border-style: solid;
+        border-right-color: $color-primary;
+
+        @include media-breakpoint-down(md) {
+            border-right-color: $color-white;
+        }
+
+        .job-filters-sticky {
+            @include media-breakpoint-down(sm) {
+                padding-left: 12px;
+            }
+
+            .clear-all {
+                border: none;
+                background: none;
+                padding-left:10px;
+                cursor:pointer;
+
+                &:focus {
+                    outline: none;
+                }
+    
+                &:before {
+                    display: inline-block;
+                    content: "\00d7";
+                    position: relative;
+                    left: -9.5px;
+                    top: -0.5px;
+                    color: #fff;
+                    z-index: 5;
+                }
+    
+                &:after {
+                    display: inline-block;
+                    content: "";
+                    position: relative;
+                    left: -104px;
+                    top: 0;
+                    color: #fff;
+                    background-color: $color-primary;
+                    border-radius: 50%;
+                    height: 16px;
+                    width: 16px;
+                    border:none;
+                }
+    
+            }
+
+            .load-more {
+                font-size: 1.2rem;
+            }
+        }
+
+        .product-search-heading {
+            display: block;
+            font-size: 20px;
+            color: $color-primary;
+            font-weight: 900;
+            padding-bottom: 15px;
+
+            &.arrow-left {
+                margin-left:-15px;
+                font-size: 1rem;
+                padding-top: 20px;
+
+                &:before {
+                    background: url(../images/triangle.svg) center center/contain no-repeat;
+                    content: '';
+                    display: inline-block;
+                    height: 8px;
+                    margin-left: 5px;
+                    vertical-align: middle;
+                    width: 9px;
+                    position: relative;
+                    top: 0;
+                    left: -7px;
+                    transform: rotate(30deg);
+                    transition: .4s;
+                }
+
+                &.collapsed {
+
+                    &:before {
+                        transform: rotate(-150deg);
+                        transition: .4s;
+                    }
+                }
+            }
+        }
+
+        /*Styles for custom checkboxes*/
+        .checkbox {
+            padding-left: 30px;
+            position: relative;
+            cursor: pointer;
+
+            label {
+                font-size: 15px;
+                color: $color-primary;
+                font-weight: 100;
+
+                .job-detail {
+                    color: rgba(45, 41, 38, 0.5);
+                }
+            }
+
+            input[type="checkbox"] {
+                opacity: 0;
+                position: absolute;
+                left:0;
+                width: 100%;
+                height:100%;
+                z-index: 5;
+                cursor: pointer;
+
+                &:checked {
+
+                    + .checkmark {
+                        background-color: $color-primary;
+                        border: 1px solid $color-primary;
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            height: 6px;
+                            width: 15px;
+                            border-left: 2px solid white;
+                            border-bottom: 2px solid white;
+                            top: 45%;
+                            left: 50%;
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                        }
+                    }
+                }
+
+                &:indeterminate {
+
+                    + .checkmark {
+                        background-color: $color-primary;
+                        border: 1px solid $color-primary;
+                    }
+                }
+
+                &:checked:disabled {
+
+                    + .checkmark {
+                        border: 1px solid grey;
+                        background-color: grey;
+                    }
+                }
+            }
+
+            .checkmark {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: white;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 1px solid rgba(45, 41, 38, 0.5);
+                margin-top:3px;
+
+            }
+        }
+    }
+
+    .prod-search-results {
+
+        .job-search-heading {
+            font-size: 20px;
+            color: $color-primary;
+            font-weight: 900;
+        }
+
+        .prod-search-result {
+            display:block;
+            padding-top:20px;
+
+            .title-wrap {
+                display:flex;
+                flex-direction: column;
+
+                .category-2, .category-3 {
+                    margin-left:5px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    flex-direction: row;
+                }
+
+                .prod-search-title {
+                    font-size: 1.4rem;
+                    letter-spacing: 1px;
+                    line-height: 25px;
+                    font-weight: bold;
+                    margin: 0 5px 0 0; 
+    
+                    @include media-breakpoint-up(lg) {
+                        font-size: 1.8rem;
+                    }
+                }
+                .pipe {
+                    display:none;
+                    @include media-breakpoint-up(lg) {
+                        display: block!important;
+                    }
+                }
+                .prod-single-cat {
+                    font-size: 1.4rem;
+                    margin-bottom:0;
+                    font-weight: bold;
+    
+                    @include media-breakpoint-up(lg) {
+                        font-size: 1.8rem;
+                        margin: 0 0 0 5px;
+                    }
+                }
+            }
+
+            .prod-location {
+                font-size: 1.4rem;
+                margin-bottom: 0;
+            }
+
+            .products {
+                font-size: 1.2rem;
+                color: $color-secondary;
+                margin-bottom: 0;
+                font-style: italic;
+                line-height: 1.3rem;
+            }
+
+            .alt-id {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            .product-detail {
+                font-size:15px;
+                color: rgba(45, 41, 38, 0.5);
+            }
+        }
+    }
+}

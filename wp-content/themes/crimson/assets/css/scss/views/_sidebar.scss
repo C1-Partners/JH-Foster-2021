@@ -1,0 +1,48 @@
+.page-sidebar {
+    list-style: none;
+    background-color: $color-secondary;
+    padding: 15px!important;
+
+	ul {
+		list-style: none;  
+    }
+
+    .widgettitle {
+        text-align: center;
+        color: $color-white;
+        margin-top: 0;
+    }
+
+    .mktoForm {
+
+        .mktoLabel {
+            color: $color-white;
+        }
+    }
+
+    .gfield {
+        padding-right:0!important;
+    }
+    .gform_footer {
+        margin-top: 0!important;
+    }
+    
+    .menu {
+        
+        .menu-item {
+          margin: 10px 5px; 
+
+          a {
+            display: block;
+            padding: 15px;
+            @include transition();
+
+            &:hover {
+                background-color: $color-primary;
+                color: $color-white;
+            }
+
+          }
+        }
+    }
+}

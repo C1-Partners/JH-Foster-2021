@@ -1,0 +1,32 @@
+.block-pages {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+    .max-width {
+        max-width: 25%;
+    }
+    .tlnk {
+        text-decoration: none!important;
+    }
+    .pg-content {
+        text-align: center;
+        padding-bottom: var(--space-lg);
+        @include brkpnt-md {
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        
+        
+        .hero-title {
+            display: inline-block;
+            border-bottom: 2px solid  var(--color-primary);
+        }
+    }
+
+    .card {
+        box-shadow: 0px 1px 20px -2px #aeaeae;
+        &__main {
+            justify-content: flex-end;
+        }
+    }
+}
+

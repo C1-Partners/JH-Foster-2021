@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+>>> Lists:
+----------------------------------------------------------------
+# Base
+# Ul
+# Ol
+# Lists - Dividers
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+ul,
+ol {
+  margin: 0 0 var(--space-md) var(--space-xs);
+  padding: 0;
+
+
+  @include brkpnt-xs {
+    margin-left: var(--space-lg);
+    margin-right: var(--space-lg);
+  }
+}
+
+li {
+  margin-bottom: var(--space-xxs);
+  position: relative;
+  padding-left: var(--space-md);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Ul
+--------------------------------------------------------------*/
+ul li:before:not(.header__nav-menu) {
+  content: "\25A0";
+  position: absolute;
+  color: var(--color-primary);
+  top: 0;
+  left: 0;
+  font-size: 1em;
+}
+
+/*--------------------------------------------------------------
+# Ol
+--------------------------------------------------------------*/
+ol {
+  li {
+    counter-increment: step-counter;
+    //padding-left: rem(24);
+
+    ol {
+      counter-reset: step-counter;
+
+      li {
+        &:before {
+          content: counter(step-counter, lower-alpha) ".";
+        }
+
+        ol li:before {
+          content: counter(step-counter, lower-roman) ".";
+        }
+      }
+    }
+
+    &:before {
+      content: counter(step-counter) ".";
+      position: absolute;
+      color: var(--color-primary);
+      top: 0;
+      left: 0;
+      font-size: 1em;
+      font-weight: 700;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Lists - Dividers
+--------------------------------------------------------------*/
+.list {
+  &__item--dividers {
+    border-bottom: var(--brdr-xxs) solid var(--color-base-darker);
+    padding: var(--space-xxs) 0;
+    margin-bottom: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+}

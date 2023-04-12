@@ -1,0 +1,154 @@
+
+.post-filters {
+    background-color: var(--color-primary);
+
+    .btn-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--space-md);
+
+        @include brkpnt-md {
+            display:block;
+        }
+
+        .show-filters-btn {
+            position: relative;
+            background-color: var(--color-primary);
+            color: var(--color-base-lightest);
+            text-decoration: none;
+            padding: var(--space-sm);
+            text-transform: uppercase;
+            font-family: var(--font-secondary);
+    
+            @include brkpnt-md {
+                display:none;
+            }
+
+            &:before {
+                content: '';
+                height: 20px;
+                width: 2px;
+                background-color: var(--color-base-white);
+                position: absolute;
+                left: -2px;
+                top:17px;
+                transition: var(--timing);
+              }
+          
+              &:after {
+                content: '';
+                height: 2px;
+                width: 20px;
+                background-color: var(--color-base-white);
+                position: absolute;
+                left: -12px;
+                top: 49%;
+              }
+        }
+    }
+    
+
+    .filters {
+        position: absolute;
+        right:0;
+        top:0;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        background-color: var(--color-primary);
+        pointer-events: none;
+        opacity: 0;
+        width: 70vw;
+        height: 100vh;
+
+        @include brkpnt-md {
+            position: static;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: var(--space-lg);
+            pointer-events: all;
+            opacity: 1;
+            width: auto;
+            height: auto;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            color: var(--color-base-white);
+            border-bottom: 1px solid var(--color-base-white);
+            font-size: var(--text-md);
+
+            .label {
+                padding-left: var(--space-sm);
+            }
+            .btn--close {
+                background-color: var(--color-base-white)!important;
+                color: var(--color-primary)!important;
+
+                svg {
+                    path {
+                        stroke: var(--color-primary);
+                    } 
+                }
+            }
+            @include brkpnt-md {
+                display: none;
+            }
+        }
+
+        .filter-btns {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin-top:var(--space-lg);
+            
+            @include brkpnt-md {
+                flex-direction: row;
+                justify-content: center;
+                margin-top: unset;
+            }
+        }
+
+        &.show-filters {
+            pointer-events: all;
+            opacity: 1;
+            transition: .3s;
+            z-index: 100;
+            text-transform: uppercase;
+            font-family: var(--font-secondary);
+        }
+        
+        .filter-btn {
+            padding: 1rem 0 1rem 1rem;
+            background-color: var(--color-primary);
+            color:var(--color-base-lightest);
+            text-transform: uppercase;
+            font-family: var(--font-secondary);
+            font-size: var(--text-md);
+            width: 100%;
+            text-align: left;
+            margin: var(--space-xxs) 0;
+
+            @include brkpnt-md {
+                padding: 1rem;
+                font-size: var(--text-sm);
+                width: auto;
+                text-align: inherit;
+                margin: 0 var(--space-xxs);
+            }
+            &.selected {
+                background-color: var(--color-primary-dark);
+            }
+            &:hover {
+                background-color: var(--color-primary-dark);
+                transition: all .3s ease;
+            }
+        }
+    }
+}

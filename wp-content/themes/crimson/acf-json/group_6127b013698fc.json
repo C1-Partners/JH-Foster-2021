@@ -1,0 +1,62 @@
+{
+    "key": "group_6127b013698fc",
+    "title": "Newsroom",
+    "fields": [
+        {
+            "key": "field_6127b01e9ae16",
+            "label": "Post Link",
+            "name": "post_link",
+            "type": "page_link",
+            "instructions": "Search and add a post link here for press releases. If used, this will link the post title and 'Read More' button on the newsroom index to the selected post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_6127b0a59ae17",
+            "label": "Press Release",
+            "name": "press_release",
+            "type": "true_false",
+            "instructions": "If selected, this adds \"Press Release\" text to the newsroom post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1629991341
+}

@@ -1,0 +1,29 @@
+{
+  "name": "crimson",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "scripts": {
+    "development": "mix",
+    "start": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix --hot",
+    "build": "mix --production"
+  },
+  "author": "crimson.com",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "browser-sync-webpack-plugin": "^2.0.1",
+    "laravel-mix": "^6.0.13",
+    "node-sass": "latest",
+    "rev-del": "latest",
+    "run-sequence": "^2.2.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  },
+  "dependencies": {
+    "jspdf": "^2.3.1",
+    "jspdf-autotable": "^3.5.14"
+  }
+}

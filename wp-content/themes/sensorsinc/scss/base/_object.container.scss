@@ -1,0 +1,28 @@
+.container {
+  max-width: rem(1420);
+  padding: 0 rem(6);
+  margin: 0 auto;
+ 
+  @include brkpnt-md {
+    padding: 0 rem(24);
+  }
+
+  &--small {
+    max-width: rem(960);
+  }
+  &--vert-padded {
+    padding-top: rem(48);
+    padding-bottom: rem(48);
+  }
+
+  &--guide {
+    padding: 0;
+
+    @include brkpnt-xs {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 0 rem(24);
+    }
+  }
+}

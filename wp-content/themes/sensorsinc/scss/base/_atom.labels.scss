@@ -1,0 +1,64 @@
+/*--------------------------------------------------------------
+# Labels for inputs
+--------------------------------------------------------------*/
+.form {
+  &__label {
+    display: block;
+    cursor: text;
+    margin-bottom: var(--space-xxxs);
+  }
+}
+
+/*--------------------------------------------------------------
+# Labels for:
+1. Checkboxes
+2. Radio inputs
+3. Required inputs
+--------------------------------------------------------------*/
+.label {
+  // Checkbox
+  &--checkbox {
+    position: relative;
+    padding-left: rem(40);
+    cursor: pointer;
+    color: var(--color-base-darker);
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      border: var(--brdr-xxs) solid var(--color-base-dark);
+      content: "";
+      height: rem(26);
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: rem(26);
+    }
+  }
+
+  // Radio inputs
+  &--radio {
+    margin-left: rem(40);
+    cursor: pointer;
+    color: var(--color-base-darker);
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: var(--brdr-xxs) solid var(--color-base-dark);
+      width: rem(26);
+      height: rem(26);
+      top: 0;
+      left: 0;
+      border-radius: 100%;
+    }
+  }
+}
+
+// Required inputs
+.form__element--required .form__label {
+  &:after {
+    content: "*";
+    color: var(--color-secondary);
+    margin-left: 4px;
+  }
+}

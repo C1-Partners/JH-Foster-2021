@@ -1,0 +1,97 @@
+.tabs {
+  &__link {
+    color: var(--charcoal);
+    border-bottom: var(--brdr-sm) solid var(--color-accent-primary-light);
+    text-decoration: none;
+    padding: rem(14) rem(18) rem(10);
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+
+    &:focus {
+      outline-offset: rem(-2);
+      outline: rem(2) solid var(--color-primary-light);
+    }
+
+    @include brkpnt-xs {
+      text-align: center;
+    }
+
+    @media print {
+      &[aria-selected="false"] {
+        display: none;
+      }
+    }
+
+    &.is-active {
+      color: var(--color-primary-darker);
+      background-color: var(--color-primary-lightest);
+      border-bottom-color: var(--color-secondary);
+
+      @include brkpnt-xs {
+        background-color: transparent;
+      }
+
+      &:visited,
+      &:hover,
+      &:active {
+        color: var(--color-primary-darker);
+      }
+    }
+
+    &:visited {
+      color: var(--charcoal);
+    }
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      color: var(--charcoal);
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: block;
+    margin: 0;
+    list-style:none;
+
+    @include brkpnt-xs {
+      display: flex;
+    }
+    @media print {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+
+    @include brkpnt-xs {
+      //flex-basis: 48%;
+    }
+    &::before {
+      display: none;
+    }
+  }
+
+  &__section {
+    padding: rem(18);
+    background-color: var(--color-accent-primary-lightest);
+    margin-top: rem(24);
+
+    @include brkpnt-xs {
+      background-color: transparent;
+    }
+
+    &[aria-hidden="true"] {
+      display: none;
+      @media print {
+        display: block;
+      }
+    }
+  }
+}

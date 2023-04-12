@@ -1,0 +1,35 @@
+.color-primary {
+  color: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+  stroke: var(--color-secondary);
+}
+
+.scrn-rdr-txt {
+  position: absolute;
+  left: rem(-10000);
+  top: auto;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+}
+
+// Clears floats
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.alt-bg {
+  background-color: var(--color-accent-primary);
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,51 @@
+
+.block-hero {
+    position: relative;
+
+    .hero-content {
+        @include floatOverImage();
+
+        .content-inner {
+            padding: 0 15px;
+
+            .hero-logo {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero-cta {
+        position: absolute;
+        bottom: 0;
+        background-color: $color-primary;
+        width: 100%;
+        text-align: left;
+        padding-left: 15px;
+
+        @include media-breakpoint-up(lg) {
+            right: 5%;
+            width: inherit;
+            padding: 2px 15px 2px 45px;
+        }
+
+        .cta-link {  
+            position: relative;
+            display: block;   
+            color: $color-white;
+            padding: 10px 20px;
+            text-decoration: underline;
+            text-transform: uppercase;
+
+            @include transition();
+
+            @include media-breakpoint-up(lg) {
+                @include threeArrows();
+            }
+
+            &:hover {
+                text-decoration: none;
+                @include transition();
+            }
+        }
+    }
+}

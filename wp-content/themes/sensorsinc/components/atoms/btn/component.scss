@@ -1,0 +1,259 @@
+/*--------------------------------------------------------------
+>>> BUTTONS - TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Button, primary
+# Button, secondary 
+# Button, outline
+# Utility buttons
+  > Button, toggle
+  > Button, modal
+  > Button, leading icon
+  > Button, close
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Primary button
+--------------------------------------------------------------*/
+.btn {
+  appearance: none;
+  display: inline-block;
+  color: white;
+  height: 100%;
+  background: var(--color-primary);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  @include font-settings(var(--font-secondary), 400);
+  font-size: var(--text-sm);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: rem(0.4);
+  @include btn-padding;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--easing);
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    background-color: var(--color-base-lightest);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+  &:active,
+  &:focus {
+    background-position: left bottom;
+    color: var(--color-primary);
+  }
+
+  &:focus,
+  &:active {
+    outline: rem(2) solid var(--color-accent-primary);
+  }
+}
+
+/*--------------------------------------------------------------
+# Secondary button
+--------------------------------------------------------------*/
+.btn--secondary {
+  position: relative;
+  background: linear-gradient(to right, white 50%, var(--color-primary) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  border: 1px solid var(--color-primary);
+  padding-right: var(--space-lg);
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--color-base-lighter);
+    &:after {
+      border-bottom: 2px solid var(--color-base-lighter);
+      border-left: 2px solid var(--color-base-lighter);
+    }
+  }
+  &:active,
+  &:focus {
+    color: var(--color-primary);
+
+    &:after {
+      border-bottom: 2px solid var(--color-primary);
+      border-left: 2px solid var(--color-primary);
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-135deg);
+    transition: .3s;
+    border-bottom: 2px solid var(--color-base-white);
+    border-left: 2px solid var(--color-base-white);
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Button outline
+--------------------------------------------------------------*/
+.btn--outline {
+  color: var(--color-primary);
+  border: var(--brdr-xxs) solid var(--color-base-white);
+  background: linear-gradient(to right, var(--color-primary) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Utility buttons
+--------------------------------------------------------------*/
+
+.btn {
+  //
+  // > Toggle button
+  //
+  &--toggle {
+    background-color: transparent;
+    color: var(--color-primary-darkest);
+    border: solid var(--brdr-xxs) var(--color-primary);
+
+    .ico__path {
+      stroke: var(--color-primary);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: white;
+      background-color: var(--color-primary-darker);
+      border-color: var(--color-primary-darker);
+
+      .ico__path {
+        stroke: white;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: rem(3) solid var(--color-primary-light);
+    }
+
+    &:visited {
+      color: var(--color-primary-darkest);
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: white;
+      }
+    }
+
+    &.is-active {
+      background-color: var(--color-primary);
+      color: white;
+
+      .ico__path {
+        stroke: white;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--color-primary-darker);
+        border-color: var(--color-primary-darker);
+      }
+
+      &:active,
+      &:focus {
+        outline: rem(3) solid var(--color-primary-light);
+      }
+    }
+  }
+
+  //
+  // > Modal button (activates modal windows)
+  //
+  &--modal {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-secondary);
+    padding: rem(4);
+    transition: color var(--timing) var(--easing);
+
+    .btn__txt {
+      margin-right: rem(8);
+      color: var(--color-secondary);
+      transition: color var(--timing) var(--easing);
+    }
+
+    .btn__txt,
+    .btn__ico {
+      pointer-events: none;
+    }
+
+    .ico__path {
+      stroke: var(--color-secondary);
+      transition: stroke var(--timing) var(--easing);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      color: var(--color-primary-darkest);
+
+      .btn__txt {
+        color: var(--color-primary-darkest);
+      }
+
+      .ico__path {
+        stroke: var(--color-primary-darkest);
+      }
+    }
+  }
+
+  //
+  // > Leading icon btns
+  //
+  &--leading-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: rem(19) rem(32) rem(15);
+
+    .btn__txt,
+    .btn__ico {
+      pointer-events: none;
+    }
+
+    .btn__ico {
+      margin-right: rem(6);
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

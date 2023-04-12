@@ -1,0 +1,122 @@
+.woocommerce {
+
+    //wc category pages
+    &.columns-4 {
+        .products {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    // Adjusts WC content on single product page
+    .single-product {
+        .product {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            @include brkpnt-md {
+                flex-direction: row;
+            }
+        }
+    }
+
+    // Fix related products styling
+    .related {
+        &.products {
+            display: flex;
+            flex-direction: column;
+            border-top: 2px solid var(--color-primary);
+            padding-top: 3rem;
+            width:100%;
+        }
+       
+        .products {
+            display: flex;
+            flex-direction: column;
+            margin-top:1em;
+            @include brkpnt-md {
+                flex-direction: row;
+            }
+            .product {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; 
+                box-shadow: 0px 1px 20px -2px #aeaeae;
+                margin: 0 5px 10px;
+                border-radius: 5px;
+                overflow: hidden;
+                padding: 0.95rem;
+                width: 100%!important;
+
+                @include brkpnt-md {
+                    max-width: 22%;
+                }
+
+                img {
+                    @include brkpnt-md {
+                        width:auto!important;
+                    }
+                }
+
+                .btn {
+                    max-width: 90px;
+                    text-align: center;
+                    height: auto;
+                }
+            }
+        }
+    }
+    // Product tabs
+    .entry-summary {
+        border-bottom: 1px solid #d3ced2;
+        padding-bottom: 1rem;
+        width: 100%!important;
+        @include brkpnt-md {
+            width: 48%!important;
+        }
+
+        .panel {
+            h2 {
+                display:none!important;
+            }
+            ul {
+                list-style: none;
+            }
+        }
+
+        .wc-tabs {
+            overflow: visible!important;
+            li {
+                padding: 0!important;
+                margin: 0 -2px!important;
+
+                &:after, &:before {
+                    display: none;
+                }
+
+                a {
+                    padding: .5rem .75rem!important;
+                    font-weight: 400!important;
+                    border-radius: 4px 4px 0 0;
+                    &:active, &:focus {
+                        outline: 2px solid var(--color-primary);
+                    }   
+                   
+                }
+            }
+        }
+    }
+
+    .woocommerce-product-gallery__image {
+        @include brkpnt-md {
+            padding: 2rem;
+        }
+    } 
+}

@@ -1,0 +1,34 @@
+.single-people {
+
+    .info {
+        display: flex;
+        flex-direction: column;
+    
+        @include brkpnt-md {
+            flex-direction: row;
+            & > * {
+                width: 50%;
+            }
+        }
+        .post-img {
+            min-height: 530px;
+            margin-top: 0;
+            background-position: top;
+        }
+        .title {
+            border-bottom: 2px solid  var(--color-primary);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .bio {
+            padding: 0 1rem;
+        }
+        .socials {
+            margin: 0 0 var(--space-sm);
+
+            &__social:first-child {
+                padding-left: .5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/*Ribbon Block*/
+.ribbon-block {
+	background: $color-tan-dark;
+	padding: 7px 35px 5px 15px;
+	position: relative;
+
+	@media (min-width: $screen-md-min) {
+		background: $color-orange;
+	}
+	a{
+		color: $color-white;
+	}
+	p {
+		color: $color-white;
+		display: block;
+		font-size: $font-size-sm;
+		line-height: 1;
+		text-align: left;
+		text-transform: uppercase;
+		@include sans-heavy;
+
+		@media (min-width: $screen-sm-min) {
+			font-size: $font-size-base;
+			text-align: center;
+		}
+
+		// not always clickable and the link color is subject to change, so removing this
+		// &:after {
+		// 	background-image: url('../images/icon-arrow-sm.svg');
+		// 	background-position: center;
+		// 	background-repeat: no-repeat;
+		// 	background-size: contain;
+		// 	content: '';
+		// 	display: inline-block;
+		// 	height: 12px;
+		// 	margin-left: 10px;
+		// 	width: 7px;
+		// }
+	}
+	.ribbon-close {
+		position: absolute;
+		right: 15px;
+		text-decoration: none;
+		top: 50%;
+		@include translate(0, -50%);
+
+		&:before {
+			color: $color-white;
+			font-size: ($font-size-xs + 1);
+			@include transition(.3s);
+		}
+		&:hover {
+			&:before {
+				opacity: .6;
+			}
+		}
+	}
+}
+
+.checkout-cart-index{
+	.ambanners{
+		margin-bottom: 30px;
+	}
+}

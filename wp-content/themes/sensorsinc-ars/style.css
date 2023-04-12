@@ -1,0 +1,26 @@
+/*!
+Theme Name: Aspen Robotic Solutions
+Author: RefractROI
+Author URI: refractroi.com
+Template:   sensorsinc
+Description: C1 Canonical Theme & Components
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain:
+Tags:
+/* Layout helpers
+----------------------------------*/
+
+/* Theme specific colors */
+
+:root {
+    --color-primary-lightest: #93a6c2;
+    --color-primary-lighter: #6f8aae;
+    --color-primary-light: #49709a;
+    --color-primary: #175687;
+    --color-primary-dark: #19486f;
+    --color-primary-darker: #193a58;
+    --color-primary-darkest: #172d43;
+}
+ 

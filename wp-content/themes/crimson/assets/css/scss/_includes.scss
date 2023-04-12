@@ -1,0 +1,40 @@
+/* Vendor - unedited vendor base styles */
+@import 'vendor/bootstrap';
+@import 'vendor/slick';
+
+/* so we can override bootstrap */
+@import 'base/mixins';
+@import 'base/colors';
+@import 'base/global';
+
+/* Blocks - styles for theme blocks*/
+@import 'blocks/img-repeater';
+@import 'blocks/img-accordion';
+@import 'blocks/accordion';
+@import 'blocks/sidebar-link';
+@import 'blocks/product-config';
+@import 'blocks/hero';
+@import 'blocks/block-two-col-content';
+@import 'blocks/vendor-slider';
+@import 'blocks/cta';
+@import 'blocks/cta-alt';
+@import 'blocks/literature-cta';
+@import 'blocks/robot-fte';
+
+/* Components - specific elements that make up a page */ 
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/site-footer';
+@import 'components/site-header';
+@import 'components/tables';
+@import 'components/internal-hero';
+@import 'components/modals';
+@import 'components/site-info';
+
+/* Views - styles specific to templates */
+@import 'views/404';
+@import 'views/archive';
+@import 'views/home';
+@import 'views/single';
+@import 'views/sidebar';
+@import 'views/events';

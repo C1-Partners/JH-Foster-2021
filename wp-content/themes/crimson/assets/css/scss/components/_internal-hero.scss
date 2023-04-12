@@ -1,0 +1,63 @@
+.int-page {
+   
+    .page-hero {
+        position: relative;
+        // background-image: url(../images/placeholders/1620x510.png);
+        background-size: cover;
+        background-position: top center;
+        background-color: $color-white;
+        z-index:9;
+
+        .page-hero-overlay {
+            position: relative;
+            padding: 40px 0 10px;
+            max-width: 1040px;
+            margin: 0 auto;
+            z-index:9;
+
+            @include media-breakpoint-up(lg) {
+                padding: 80px 0 10px;
+            }
+            @include media-breakpoint-up(xxl) {
+                max-width: 1140px;
+            }
+
+            .page-title {
+                color: $color-black;
+                text-align: center;
+                text-transform: capitalize;
+
+                @include media-breakpoint-up(xl) {
+                    text-align:left;
+                }
+            }
+
+            .col-12 {
+                
+                @include media-breakpoint-up(lg) {
+                    padding-left:0;
+                }
+            }
+        } 
+    }
+
+    .breadcrumb-wrapper {
+        position: relative;
+        color: $color-primary;
+        padding-top: 10px;
+        text-align: center;
+        z-index:9;
+
+        a {
+            color:$color-primary;
+
+            &:hover {
+                color: $color-quaternary;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+>>> COLORS - TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Color Base - Charcoal
+# Orange
+# Aqua
+# Helpers
+--------------------------------------------------------------*/
+
+:root {
+  /*--------------------------------------------------------------
+# Color Base - Charcoal
+--------------------------------------------------------------*/
+  --color-base-white: #fff;
+  --color-base-lightest: #f8f7f7;
+  --color-base-lighter: #d9d9d9;
+  --color-base-light: #9b9b9b;
+  --color-base: #747474;
+  --color-base-dark: #555555;
+  --color-base-darker: #383737;
+  --color-base-darkest: #070606;
+
+  /*--------------------------------------------------------------
+# Orange
+--------------------------------------------------------------*/
+  --color-primary-lightest: #ee3b3b;
+  --color-primary-lighter: #df3838;
+  --color-primary-light: #d43535;
+  --color-primary: #c13131;
+  --color-primary-dark: #9C1818;
+  --color-primary-darker: #720000;
+  --color-primary-darkest: #491000;
+
+  /*--------------------------------------------------------------
+# Aqua
+--------------------------------------------------------------*/
+  --color-accent-primary: #25a9ba;
+
+    /*--------------------------------------------------------------
+# Overlays
+--------------------------------------------------------------*/
+--color-overlay-dark: #0000006b;
+
+}
+
+
+  /*--------------------------------------------------------------
+# WP Settings
+--------------------------------------------------------------*/
+// for wp editor, set link color for a
+.has-white-color, .has-white-color a {
+    color: var(--color-base-white);
+}
+.has-black-color, .has-black-color a {
+    color: var(--color-base-darkest);
+}
+.has-primary-color, .has-primary-color a {
+  color: var(--color-primary);
+}

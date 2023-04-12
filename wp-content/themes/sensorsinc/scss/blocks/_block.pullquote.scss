@@ -1,0 +1,56 @@
+
+
+.block-quote {
+    position: relative;
+    @include brkpnt-md {
+        max-width: 45%;
+    }
+    &.left {
+        float: left;
+        @include brkpnt-md {
+            margin-left: calc(var(--space-lg) * -1);
+        }
+    }
+    &.right {
+        float: right;
+        @include brkpnt-md {
+            margin-right: calc(var(--space-lg) * -1);
+        }
+
+    }
+    &.pull {
+        border-top: 3px solid var(--color-primary);
+        border-bottom: 3px solid var(--color-primary);
+
+        .quote {
+            p {
+                font-size: var(--text-md);
+            }
+            
+        }
+    }
+    &.callout {
+        border: 3px solid var(--color-primary);
+
+        .h-quote {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 390px;
+            top: -20px;
+            text-align: center;
+           
+            h3 {
+                background-color: #fff;
+                padding: 0 var(--space-xs);
+            }
+        }
+    }
+    .auth {
+        margin-top: var(--space-xs);
+        text-align: right;
+        @include font-settings(var(--font-secondary), normal, $style: normal);
+    }
+}

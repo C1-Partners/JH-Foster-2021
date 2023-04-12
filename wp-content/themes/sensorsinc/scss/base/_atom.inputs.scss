@@ -1,0 +1,92 @@
+/*--------------------------------------------------------------
+# General input styles
+--------------------------------------------------------------*/
+.form {
+  &__element {
+    position: relative;
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      * {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__input {
+    border: var(--brdr-xxs) solid var(--color-base-dark);
+    @include input-padding;
+    color: var(--color-base-dark);
+    background-color: white;
+    line-height: 1.5;
+    transition: background-color var(--timing) var(--easing);
+    width: 100%;
+
+    &:active,
+    &:focus {
+      color: var(--color-base-darker);
+      background-color: var(--color-base-lightest);
+    }
+  }
+}
+
+textarea {
+  line-height: 1.5;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Input - Errors
+--------------------------------------------------------------*/
+.error {
+  .form {
+    &__label {
+      color: var(--color-primary);
+    }
+
+    &__input {
+      border-color: var(--color-primary);
+      background-color: white;
+      transition: background-color var(--timing) var(--easing);
+
+      &:active,
+      &:focus {
+        color: var(--color-base-darker);
+        background-color: var(--color-base-lightest);
+      }
+    }
+
+    &__mssg {
+      color: var(--color-primary);
+      background-image: url("../images/ico-error.svg");
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: rem(32);
+      //margin-top: rem(4);
+      margin-top: var(--space-xxxs);
+    }
+  }
+}
+
+.gform_fields {
+  margin-left: 0;
+  margin-right: 0;
+  li {
+    list-style: none !important;
+    padding-left: 0;
+
+    &:before {
+      display: none;
+      content: none;
+    }
+  }
+}
+
+.input--full-width {
+  input,
+  textarea {
+    width: 100%;
+  }
+}

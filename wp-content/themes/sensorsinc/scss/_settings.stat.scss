@@ -1,0 +1,57 @@
+.stat {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+  color: var(--color-base-darker);
+  line-height: 1;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+
+  &__ico {
+    margin-right: rem(8);
+
+    .ico__path {
+      stroke: var(--color-primary-darkest);
+    }
+  }
+
+  &__num {
+    @include font-settings(var(--font-secondary), 500);
+    @include typesetting(30, 36);
+    color: var(--color-primary);
+  }
+
+  &__label {
+    flex-basis: 100%;
+    margin-top: rem(2);
+    text-transform: capitalize;
+  }
+
+  // Longform paragraph text w/icon
+  &--ico-txt {
+    text-align: left;
+
+    .stat {
+      &__info {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        @include typesetting(16, 24);
+
+        @include brkpnt-xs {
+          @include typesetting(18, 28);
+        }
+      }
+
+      &__ico {
+        margin-right: rem(14);
+      }
+    }
+  }
+}

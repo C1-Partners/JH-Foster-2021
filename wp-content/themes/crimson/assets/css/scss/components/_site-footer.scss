@@ -1,0 +1,120 @@
+/*
+ * Styles for site footer
+ */
+
+ .site-footer {
+    background-color: $color-tertiary;
+    color: $color-quaternary;
+    padding: 50px 0;
+    border-top: 1px solid $color-primary;
+
+    .col {
+        margin: 15px 0;
+    }
+
+    .center, .right {
+        
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 65px 0;
+    }
+
+    ul {
+        list-style: none!important;
+        padding-left: 0;
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+
+        li {
+            a {
+                color: $color-quaternary;
+
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    //center any images or custom html on small screens 
+    .custom-html-widget {
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+    }
+    //hit the widget titles in the footer
+    .widgettitle {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: $color-white;
+        margin-top: 0;
+
+        //center them on mobile
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+    }
+
+    //for industries col only
+    #menu-footer-industries {
+
+        @include media-breakpoint-up(lg) {
+            column-count: 2;
+        }
+    }
+
+    //styles for our socials
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+
+        a {
+            margin: 0 5px;
+
+            svg {
+                fill: $color-white;
+                transition: .3s;
+    
+                &:hover {
+                    fill: $color-primary;
+                    transition: .3s;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .logos {
+        img {
+            max-height: 50px;
+        }
+    }
+    //copyright section at bottom of footer
+    .copyright {
+        margin-top: 20px;
+        border-top: 1px solid $color-primary;
+        padding-top: 30px;
+        font-size: 1.2rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 50px;
+        }
+
+        a {
+            color: $color-quaternary!important;
+
+            &:hover {
+                color: $color-primary!important;
+            }
+        }
+    }
+}

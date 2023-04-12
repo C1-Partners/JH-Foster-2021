@@ -1,0 +1,60 @@
+
+// Events Page
+.events {
+
+    .event-outer {
+
+        .event-inner {
+            border: 1px solid $color-secondary;
+            margin: 10px;
+            padding: 5px 8px;
+
+            .event-title, .event-date {
+                text-align: center;
+                color: $color-primary;
+            }
+
+            .event-img {
+
+                @include media-breakpoint-up(lg) {
+                    max-height: 200px;
+                }
+            }
+
+            .event-content {
+                min-height: 175px;
+                color: $color-black;
+            }
+        }
+
+        .register-btn {
+            margin: 0 10px;
+        
+            .register {
+                display:block;
+                margin-top: 6px;
+            }
+        }
+    }
+}
+
+// Events Single
+.single-event {
+
+    .event-content {
+
+        .gform_wrapper {
+            
+            @include media-breakpoint-up(lg) {
+                max-width: 400px;
+
+                .gfield {
+                    padding-right:0!important;
+                }
+                .gform_footer {
+                    margin-top: 0!important;
+                }
+            }
+        }
+    }
+}

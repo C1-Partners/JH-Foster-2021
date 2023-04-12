@@ -1,0 +1,156 @@
+body {
+	font-size: 1.7rem;
+	position: relative;
+	background: #d8d8d8;
+	overflow-x: hidden;
+	max-width: 1980px;
+    margin: 0 auto;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include lato-regular;
+}
+html {
+	font-size: 10px; // Set base font size for rem use
+}
+// html,body {
+	
+// }
+//hide empty p tags
+p:empty {
+	display:none;
+}
+
+h1 { 
+	font-size: 3.3rem;
+	
+	@include media-breakpoint-up(md) {
+		font-size: 4.5rem;
+	}
+}
+h2, .as-h2 { 
+	font-size: 2.8rem; 
+	margin: 2rem 0 2rem; 
+}
+h3, .as-h3 { 
+	font-size: 2rem; 
+	margin: 2rem 0 1.75rem; 
+}
+h4 { 
+	font-size: 1.12em; 
+}
+h5 { 
+	font-size: .83em; 
+}
+h6 { 
+	font-size: .75em; 
+}
+
+a {
+	color: $color-primary;
+	transition: .3s;
+
+	&:hover {
+		color: $color-secondary;
+		text-decoration: none!important;
+		transition: .3s;
+	}
+}
+
+.underline {
+	text-decoration: underline;
+	@include transition();
+}
+
+// Adjusts ul styling for lists near featured images at top of blog
+.single .site-main {
+	ul {
+		overflow: hidden;
+	}
+}
+
+//google maps iframes
+.responsive {
+	position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+	max-width: 100%;
+	margin-bottom: 40px;
+	
+	iframe {
+		border: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+picture{
+
+	img {
+		width: 100%;
+	}
+}
+button:focus {outline:0;}
+// WordPress Default Image Positioning Classes
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 2em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+.has-hiding {
+	@include transition();
+}
+
+.hiding {
+	opacity: 0;
+}
+
+.site-main {
+
+	background-color: $color-white;
+}
+
+//wp fonts
+.has-large-font-size {
+	font-size: 1.5em!important;
+}
+.has-huge-font-size {
+	font-size: 2em!important;
+}
+
+// posts navigation 
+.posts-navigation {
+	display:flex;
+	justify-content: space-evenly;
+}
+
+.mktoForm {
+	overflow: hidden!important;
+}
+
+.mobile-contact {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+	background-color: $color-primary;
+
+	@include media-breakpoint-up(lg) {
+		display:none;
+	}
+
+	.c2c {
+		width: 100%;
+		margin: 0;
+	}
+}

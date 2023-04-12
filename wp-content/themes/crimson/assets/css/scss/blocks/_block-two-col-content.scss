@@ -1,0 +1,44 @@
+
+
+
+.block-two-col-content {
+    padding: 20px 0;
+
+    @include media-breakpoint-up(lg) {
+        padding: 45px 0;
+    }
+
+    .right {
+        &.bg-gray {
+            padding-bottom:25px;
+
+            .title {
+                color: $color-white;
+                text-align: center;
+            }
+
+            .mktoForm {
+                .mktoLabel {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .gform {
+            background-color: $color-secondary;
+            padding: 10px 15px;
+    
+            .gform_title {
+                text-align: center;
+                color: $color-white;
+            }
+    
+            .gfield {
+                padding-right:0!important;
+            }
+            .gform_footer {
+                margin-top: 0!important;
+            }
+        }
+    }
+}

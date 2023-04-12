@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  overflow-x: hidden;
+}
+a,
+button,
+input,
+select,
+textarea,
+[role="tabpanel"],
+.a11y-modal,
+.btn {
+  &:focus,
+  &:active {
+    outline: var(--brdr-xs) solid var(--color-accent-primary);
+    // outline-offset: 2px;
+  }
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Removes gray background when button or link is tapped in iOS
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+figcaption {
+  font-size: var(--text-sm);
+}
+
+// Fieldset reset
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Prevents icons from getting cropped
+svg {
+  overflow: visible;
+}
+.page-template-template-frontpage {
+  section {
+    padding: var(--space-xl) var(--space-sm);
+    @include brkpnt-md {
+      padding: var(--space-xl) var(--space-xxl);
+    }
+  }
+}
+
+.section-pad {
+  padding: var(--space-xl) var(--space-sm);
+  @include brkpnt-md {
+    padding: var(--space-xl) var(--space-xxl);
+  }
+}
+
+.wp-block-columns {
+  .wp-block-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    iframe {
+      width: 100%;
+      min-height: 370px;
+    }
+  }
+}
+
+.wp-block-quote {
+  border-left: 5px solid var(--color-primary);
+  padding-left: 15px;
+  margin-left: 10px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.d-none {
+  display:none;
+}
+.hide-mobile {
+  display:none;
+}
+.hide-desktop {
+  display:block;
+}
+@include brkpnt-md {
+  .hide-mobile {
+    display:block;
+  }
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.site-main {
+  padding: 2rem 0 2rem!important;
+  border-left: 1px solid var(--color-base-lighter);
+  border-right: 1px solid var(--color-base-lighter);
+}
+
+.bk-btn {
+  margin-bottom: var(--space-lg);
+}
+
+.content-page {
+  padding: 1.2rem 2rem 1.2rem;
+}
+.btn-row {
+  display:flex;
+}
+
+.posts-navigation {
+  .nav-links  {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin:var(--space-md) 0;
+  }
+}
+
+.mktoForm {
+  color: #fff!important;
+  background-color: var(--color-base-darker)!important;
+  font-family: var(--font-primary)!important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem 1.5rem;
+  width: 100%!important;
+  font-size: 15px!important;
+}
+// Marketo form styles
+.mktoForm {
+  label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;  
+    width: 100%!important;
+  } 
+  .mktoGutter {
+    display: none!important;
+  }
+  .mktoCheckboxList {
+    width: 20px!important;
+  }
+  input, textarea {
+    width: 100%!important;
+    border-radius: 5px!important;
+    margin-top: 4px!important;
+    min-height: 2.5em!important;
+  }
+  textarea {
+    max-height: 4em!important;
+  }
+
+  .mktoOffset {
+    height: 0!important;
+  }
+  .mktoButtonWrap {
+    margin-left: unset!important;
+  }
+  .mktoFormRow {
+    width: 100%!important;
+    .mktoFormCol {
+      width: 100%!important;
+      margin-bottom: 1px!important;
+      .mktoFieldWrap {
+        width:100%!important;
+      }
+    }
+  }
+  .mktoButtonRow {
+    width: 100%!important;
+    margin-top: .5rem;
+    button {
+      width: 100%!important;
+      background-image: unset!important;
+      background-color: var(--color-primary)!important;
+      box-shadow: none!important;
+      border-radius: 0!important;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.wp-caption {
+  &.alignleft {
+    float: left;
+  }
+  &.alignright {
+    float: right;
+  }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 900;
+
+  .header__logo-outer {
+    opacity: 1;
+    width: 100%;
+    transition: 2s;
+  }
+}

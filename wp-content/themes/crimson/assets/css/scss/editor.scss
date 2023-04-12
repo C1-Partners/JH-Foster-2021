@@ -1,0 +1,54 @@
+@import 'base/config';
+@import 'base/fonts';
+
+// so rem still works
+html{
+  font-size: 10px;
+}
+
+.wp-block {
+  @import 'includes';
+
+  max-width: none !important;
+  font-family: $font-family-base;
+  a{
+    pointer-events: none; // so we can click a block without clicking the links inside
+  }
+  .components-icon-button {
+    overflow: hidden; // combat bootstrap reboot
+  }
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: none !important;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+/* Widen up the sidebar on larger screens */
+@media (min-width: 782px) {
+  .edit-post-layout.is-sidebar-opened .edit-post-layout__content {
+    margin-right: 360px;
+  }
+}
+
+@media (min-width: 782px) {
+  .edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout, .edit-post-layout.is-sidebar-opened .edit-post-sidebar {
+    width: 360px;
+  }
+}
+
+.edit-post-layout.is-sidebar-opened .components-notice-list {
+  right: 360px;
+}
+
+/* Labels are inline-block and can look stupid */
+.components-base-control .components-base-control__label{
+  display: block;
+}
+
+

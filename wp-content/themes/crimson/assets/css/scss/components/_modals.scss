@@ -1,0 +1,41 @@
+
+.modal {
+    z-index: 10500;
+
+    .modal-dialog {
+        .modal-content {
+            background-color: $color-secondary;
+            border: 1px solid $color-white;
+            padding: 25px;
+            border-radius: 5px;
+
+            .modal-header {
+                border-bottom: 0;
+            }
+            .close {
+                margin-right: 2px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px;
+            max-width: 650px;
+        }
+    }
+    // Gravity Forms styles in mobdal
+    .gfield {
+        padding-right: 0!important
+    }
+    .gform_title, .gfield_label {
+        color: $color-white;
+    }
+    .gchoice {
+        label {
+            color: $color-white;
+        }
+    }
+}
+
+.modal-backdrop {
+    z-index: 10000
+}

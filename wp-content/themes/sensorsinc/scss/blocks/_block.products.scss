@@ -1,0 +1,23 @@
+.block-products {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+   
+    .tlnk {
+        text-decoration: none!important
+        }
+    .grid__item {
+       box-shadow: 0px 1px 20px -2px #aeaeae;
+       
+    }
+    .card {
+        &__img {
+            padding-top: var(--space-xl);
+            height: 284px;
+            width: auto;
+        }
+        &__figure {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

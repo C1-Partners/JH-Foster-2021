@@ -1,0 +1,92 @@
+{
+    "key": "group_60c4ebb1abeaa",
+    "title": "CPT: Suppliers",
+    "fields": [
+        {
+            "key": "field_60c4ebbd112d7",
+            "label": "Category",
+            "name": "single_cat",
+            "type": "checkbox",
+            "instructions": "Select one or more Categories to be used on the product configurator for this supplier.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "automation": "Automation",
+                "compressed-air": "Compressed Air",
+                "robotics": "Robotics"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_60d48868a8cc5",
+            "label": "Products",
+            "name": "products",
+            "type": "textarea",
+            "instructions": "A list of products for this supplier that is only used on the product configurator.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_60e734e33efcf",
+            "label": "Country of Manufacture",
+            "name": "manufactured",
+            "type": "checkbox",
+            "instructions": "Select (ONE) whether this supplier's products are Made in USA only, or Made in other countries as well as the USA. Leave unchecked if supplier doesn't make any of its products in the USA.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "usa": "USA Made",
+                "global": "Global (including USA)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "vendors"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1625771486
+}

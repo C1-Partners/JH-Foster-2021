@@ -1,0 +1,86 @@
+{
+    "key": "group_60fad6fec680e",
+    "title": "Request Literature",
+    "fields": [
+        {
+            "key": "field_60fad726292c2",
+            "label": "Heading",
+            "name": "lr_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Request More Information",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60fad8a4292c3",
+            "label": "Image",
+            "name": "lr_img",
+            "type": "image",
+            "instructions": "If not supplied, the JHF default image will show here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": ".8",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60fad8c6292c4",
+            "label": "CTA Text",
+            "name": "lr_cta_txt",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact us today at <strong><a href=\"tel:+18556880065\">855.688.0065<\/a><\/strong> or <strong><a href=\"mailto:SOLUTIONS@JHFOSTER.COM\">email<\/a><\/strong> us and one of our certified technicians can walk you through which industrial air dryer is right for your specific application. <\/br>\r\n\r\nNeed more information about products and suppliers? Get literature from a JHFoster representative today.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "products"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1627054492
+}

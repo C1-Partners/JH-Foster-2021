@@ -1,0 +1,88 @@
+.block-robot-fte {
+
+    form {
+        background-color: $color-xlight-gray;
+        box-shadow: 15px 15px 34px -17px #000;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        padding: 20px 10px;
+        border: 2px solid $color-primary;
+
+        input {
+            width: 100%;
+            border: 0;
+            border-radius: 6px;
+            padding: 7px;
+        }
+    }
+
+    .read-only {
+        background-color: #8e8d8d;
+        color: #fff;
+    }
+
+    .robot-settings, .fte-settings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fte-settings {
+        border-left: 1px solid $color-white;
+    }
+
+    .btn-row {
+        text-align: center;
+    }
+
+    label, input {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        box-shadow: 15px 15px 34px -17px #000;
+        font-size: 1.1rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.7rem
+        }
+    }
+
+    .year-label {
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: bold;
+    }
+
+    tr .table-header {
+        &:not(:first-child) {
+            font-size: 1.4rem;
+            padding: 6px;
+            border-left: 1px solid white;
+            text-align: center;
+        }
+    }
+
+    table, td {
+        border: 1px solid #333;
+    }
+
+    td {
+        text-align: center;
+        padding: 6px 0;
+
+        @include media-breakpoint-up(md) {
+            padding: 6px;
+        }
+    }
+
+    tr {
+        position: relative;
+    }
+
+    thead, tfoot {
+        background-color: #333;
+        color: #fff;
+    }
+}

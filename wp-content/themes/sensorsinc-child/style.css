@@ -1,0 +1,26 @@
+/*!
+Theme Name: Sensors INC Child
+Author: C1 Partners
+Author URI: c1-partners.com
+Template:   sensorsinc
+Description: C1 Canonical Theme & Components
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain:
+Tags:
+/* Layout helpers
+----------------------------------*/
+
+/* Theme specific colors */
+
+:root {
+    --color-primary-lightest: #02a6eb;
+    --color-primary-lighter: #03a0e2;
+    --color-primary-light: #0299d9;
+    --color-primary: #0192cf;
+    --color-primary-dark: #027eb3;
+    --color-primary-darker: #016c99;
+    --color-primary-darkest: #01638d;
+}
+ 

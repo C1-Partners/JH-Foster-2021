@@ -1,0 +1,33 @@
+.btn {
+
+  &--close {
+    background-color: transparent;
+   
+    transition: none!important;
+    font-size: var(--text-md)!important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--color-primary-darker);
+    }
+
+    &:active,
+    &:focus {
+      outline: var(--brdr-sm) solid var(--color-primary-light);
+    }
+
+    .btn__ico {
+      display: block;
+      margin-bottom: 0!important;
+      // margin-right:var(--space-sm);
+
+      path {
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: rem(1.5);
+      }
+    }
+  }
+}

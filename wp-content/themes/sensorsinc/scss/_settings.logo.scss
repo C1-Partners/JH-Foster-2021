@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
+
+.header {
+  &__logo-outer {
+    max-width: 230px;
+    display: flex;
+    align-items: center;
+    order: 2;
+    margin-right: var(--space-sm);
+    transition: .8s;
+
+    @include brkpnt-md {
+      order: 1;
+    }
+
+    .custom-logo-link {
+      display: flex;
+
+      .custom-logo {
+        width: 100%;
+        height: auto;
+        max-height: 80px;
+        padding: var(--space-xs) var(--space-sm);
+      }
+    }
+  }
+}

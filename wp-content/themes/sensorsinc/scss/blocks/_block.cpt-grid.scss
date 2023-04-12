@@ -1,0 +1,22 @@
+.block-cptg {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    .gtc-4 {
+        @include brkpnt-md {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    .tlnk {
+        text-decoration: none!important;
+    }
+    .grid__item {
+       box-shadow: 0px 1px 20px -2px #aeaeae;
+    }
+    .card {
+        &__img {
+            padding-top: var(--space-xl);
+            height: 284px;
+            width: auto;
+        }
+    }
+}

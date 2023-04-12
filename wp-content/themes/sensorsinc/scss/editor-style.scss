@@ -1,0 +1,304 @@
+/*!
+Theme Name: Gravity Canon
+Author: Gravity Switch
+Author URI: http://gravityswitch.com
+Description: Gravity Switch Canonical Theme & Components
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain:
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Functions
+--------------------------------------------------------------*/
+@import "tools/tools.functions.scss";
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "settings.variables.scss";
+
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+@import "settings.colors.scss";
+
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+@import "tools/tools.mixins";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "base/generic.normalize.scss";
+
+/*--------------------------------------------------------------
+# Global styles
+--------------------------------------------------------------*/
+@import "base/generic.global.scss";
+
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
+@import "base/object.container.scss";
+
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
+@import "settings.grid.scss";
+@import "settings.flex.scss";
+
+/*--------------------------------------------------------------
+# Spacing
+--------------------------------------------------------------*/
+@import "settings.spacing.scss";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "settings.typography.scss";
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+@import "base/atom.lists.scss";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+@import "settings.links.scss";
+
+/*--------------------------------------------------------------
+# Images
+--------------------------------------------------------------*/
+@import "settings.images.scss";
+
+/*--------------------------------------------------------------
+# Labels
+--------------------------------------------------------------*/
+@import "base/atom.labels.scss";
+
+/*--------------------------------------------------------------
+# Inputs
+--------------------------------------------------------------*/
+@import "base/atom.inputs.scss";
+
+/*--------------------------------------------------------------
+# Stats
+--------------------------------------------------------------*/
+@import "settings.stat.scss";
+
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
+@import "settings.logo.scss";
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+@import "molecules/molecule.testimonial.scss";
+
+/*
+
+...                            
+;::::;                           
+;::::; :;                          
+;:::::'   :;                         
+;:::::;     ;.                        
+,:::::'       ;           OOO\         
+::::::;       ;          OOOOO\        
+;:::::;       ;         OOOOOOOO       
+,;::::::;     ;'         / OOOOOOO      
+;:::::::::`. ,,,;.        /  / DOOOOOO    
+.';:::::::::::::::::;,     /  /     DOOOO   
+,::::::;::::::;;;;::::;,   /  /        DOOO  
+;`::::::`'::::::;;;::::: ,#/  /          DOOO 
+:`:::::::`;::::::;;::: ;::#  /            DOOO
+::`:::::::`;:::::::: ;::::# /              DOO
+`:`:::::::`;:::::: ;::::::#/               DOO
+:::`:::::::`;; ;:::::::::##                OO
+::::`:::::::`;::::::::;:::#                OO
+`:::::`::::::::::::;'`:;::#                O 
+`:::::`::::::::;' /  / `:#                  
+::::::`:::::;'  /  /   `#
+
+BEWARE, THOSE WHO WOULD BREAK THE SACRED ORDER OF COMPONENTS - brenda */
+
+/*--------------------------------------------------------------
+# @import for every .scss in /compontents
+--------------------------------------------------------------*/
+@import "../components/**/component.scss";
+
+/* BEWARE!!!!!!!!!!! - brenda */
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+// @import "organisms/organism.header.scss";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+// @import "organisms/organism.footer.scss";
+
+/*--------------------------------------------------------------
+# Carousel
+--------------------------------------------------------------*/
+// @import "organisms/organism.carousel.scss";
+
+/*--------------------------------------------------------------
+# Carousel Block
+--------------------------------------------------------------*/
+// @import "blocks/block.carousel-block.scss";
+
+/*--------------------------------------------------------------
+# Pullquote Block
+--------------------------------------------------------------*/
+@import "blocks/block.pullquote.scss";
+
+/*--------------------------------------------------------------
+# Callout - Newsletter Block
+--------------------------------------------------------------*/
+@import "blocks/block.callout.scss";
+
+/*--------------------------------------------------------------
+# Homepage hero Block
+--------------------------------------------------------------*/
+@import "blocks/block.hero.scss";
+
+/*--------------------------------------------------------------
+# Image Cards Grid Block
+--------------------------------------------------------------*/
+@import "blocks/block.img-cards.scss";
+
+/*--------------------------------------------------------------
+# CPT grid
+--------------------------------------------------------------*/
+@import "blocks/block.cpt-grid.scss";
+
+/*--------------------------------------------------------------
+# Menu
+// --------------------------------------------------------------*/
+// @import "organisms/organism.menu.scss";
+
+// /*--------------------------------------------------------------
+// # Data
+// --------------------------------------------------------------*/
+// @import "organisms/organism.data.scss";
+
+// /*--------------------------------------------------------------
+// # Guide
+// --------------------------------------------------------------*/
+// @import "organisms/organism.guide.scss";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+// @import "templates/template.home-page.scss";
+// @import "templates/template.standard-interior.scss";
+// @import "templates/template.resources.scss";
+// @import "templates/template.career.scss";
+// @import "templates/template.career-list.scss";
+// @import "templates/template.404.scss";
+// @import "plugins/plugin.helpful.scss";
+// @import "plugins/plugin.facetwp.scss";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# jQuery UI Theme
+--------------------------------------------------------------*/
+@import "jquery-ui.css";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "overrides.utilities.scss";
+
+/* hi */
+.wp-block {
+  
+	max-width: none !important;
+	// font-family: $font-family-base;
+	a{
+	  pointer-events: none; // so we can click a block without clicking the links inside
+	}
+	.components-icon-button {
+	  overflow: hidden; // combat bootstrap reboot
+	}
+  }
+  
+  /* Width of "wide" blocks */
+  .wp-block[data-align="wide"] {
+	  max-width: none !important;
+	  
+  }
+  
+  /* Width of "full-wide" blocks */
+  .wp-block[data-align="full"] {
+	  max-width: none;
+  }
+  /* make partial width blocks clickable on the editor + small fixes needed */
+  .acf-block-preview {
+	  .block-quote {
+		  z-index: 9;
+		  blockquote {
+			  padding-top:2rem;
+		  }
+	  }
+  }
+  
+  /* Widen up the sidebar on larger screens */
+  @media (min-width: 782px) {
+	.edit-post-layout.is-sidebar-opened .edit-post-layout__content {
+	  margin-right: 360px;
+	}
+  }
+  
+  @media (min-width: 782px) {
+	.edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout, .edit-post-layout.is-sidebar-opened .edit-post-sidebar {
+	  width: 360px;
+	}
+  }
+  
+  .edit-post-layout.is-sidebar-opened .components-notice-list {
+	right: 360px;
+  }
+  
+  /* Labels are inline-block and can look odd */
+  .components-base-control .components-base-control__label{
+	display: block;
+  }

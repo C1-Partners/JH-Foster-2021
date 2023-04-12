@@ -1,0 +1,103 @@
+
+.block-callout {
+    padding: var(--space-lg);
+    background-image: url(../Images/towers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include brkpnt-md {
+        margin-left: calc(var(--space-lg) * -1);
+        margin-right: calc(var(--space-lg) * -1);
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-base-darkest);
+        opacity: 0.85;
+        z-index: 2;
+      }
+
+    .inner {
+        position:relative;
+        border: 2px solid var(--color-primary);
+        padding: 0 var(--space-lg) var(--space-lg);
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+
+        @include brkpnt-md {
+            flex-direction: row;
+        }
+        .button-row {
+            margin-top: var(--space-lg);
+        }
+        .left {
+            width: 100%;
+            padding-top: var(--space-xl);
+            h2 {
+                color: var(--color-base-white);
+            }
+        }
+        .right {
+            width: 100%;
+            padding-top: var(--space-xl);
+            color: var(--color-base-white);
+            @include brkpnt-md {
+                padding-left: var(--space-md);
+            }
+            ul {
+                margin:0;
+
+                a {
+                    text-decoration: none;
+                }
+                
+                li {
+                    padding-left:0;
+                    color:var(--color-base-lighter);
+                    text-decoration: none;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        color: var(--color-primary)!important;
+
+                        span {
+                            color: var(--color-primary);
+                        }
+
+                        svg {
+                            margin-left: 5px;
+                            transition: all .3s ease;
+
+                            path {
+                                fill: var(--color-primary)!important;
+                            }
+                        }
+                    }
+
+                    span {
+                        color: var(--color-base-white);
+                        cursor: pointer;
+                        font-size: var(--text-sm);
+                        text-transform: uppercase;
+                        transition: all .3s ease;
+                        @include font-settings(var(--font-secondary), normal, $style: normal);
+
+                        svg {
+                            transition: all .3s ease;
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,49 @@
+/*
+ * Styles for image repeater block
+ */
+
+ .block-ir {
+     padding: 20px 0;
+
+     @include media-breakpoint-up(lg) {
+         padding: 45px 0;
+     }
+
+    .img-wrap {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .img-link {
+            display:block;
+
+            &:hover {
+
+                .ir-img {
+                    transform: scale(1.1); 
+                }
+
+            }
+
+            .ir-title {
+                text-align: center;
+                margin: 8px 0 0;
+            }
+    
+            .ir-sbtitle {
+                font-size: 1.3rem;
+                line-height: 1.4rem;
+            }
+    
+            .ir-img {
+                height: 150px;
+                @include transition();
+                
+                @include media-breakpoint-down(sm) {
+                    max-height: 100px;
+                    @include transition();
+                }  
+            }
+        }
+    }
+}

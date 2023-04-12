@@ -1,0 +1,152 @@
+.accordion {
+  &__item {
+    border-bottom: solid var(--brdr-xxs) var(--color-base-darker);
+  }
+
+  &__heading {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  &__btn {
+    text-transform: none;
+    color: var(--color-primary-darkest);
+    background-color: transparent;
+    color: var(--color-primary-darkest);
+    padding: rem(24) rem(24) rem(24) rem(50);
+    display: inline-flex;
+    text-align: left;
+
+    @include brkpnt-xs {
+      padding-left: rem(64);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      color: var(--color-primary-darkest);
+    }
+
+    // expand, collapse icons
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 16%;
+      content: "";
+      border: var(--brdr-xs) solid var(--color-secondary);
+      width: rem(32);
+      height: rem(30);
+      margin-right: rem(18);
+      flex-shrink: 0;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      opacity: 0;
+      background-image: url("../images/ico-expand-orange.svg"); // Detault img is
+      background-color: white;
+      transition: opacity var(--timing) var(--easing), background-color var(--timing) var(--easing), background-image var(--timing) var(--easing);
+
+      @include brkpnt-xs {
+        top: 22%;
+        width: rem(40);
+        height: rem(38);
+        margin-right: rem(24);
+      }
+      @media print {
+        display: none;
+      }
+    }
+
+    // expand icon
+    &::before {
+      // position: relative;
+      opacity: 1;
+    }
+
+    // collapse icon
+    &[aria-expanded="true"] {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        background-image: url("../images/ico-collapse-orange.svg");
+        opacity: 1;
+      }
+    }
+
+    &[aria-expanded="false"] {
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      background: transparent;
+      color: var(--color-primary-darkest);
+    }
+  }
+
+  &__section {
+    opacity: 1;
+    max-height: rem(15000);
+    visibility: visible;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    transition: visibility 0s var(--easing), max-height 1s var(--easing), opacity 1s var(--easing), height 1s var(--easing);
+    transition-delay: 0s;
+
+    @media screen {
+      &[aria-hidden="true"] {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+        height: 0%;
+        transition-delay: 0.8s, 0s, 0s, 0s;
+      }
+    }
+    @media print {
+      height: auto;
+    }
+  }
+
+  &__body {
+    display: block;
+    margin-left: rem(50);
+    margin-bottom: rem(40);
+    padding-top: 8px;
+
+    @include brkpnt-xs {
+      margin-left: rem(64);
+    }
+    @media print {
+      margin-left: 0;
+    }
+  }
+
+  // Styling for list of form inputs
+  &__list {
+    margin: 0;
+
+    @include brkpnt-xs {
+      column-count: 2;
+    }
+
+    .form__element {
+      padding: rem(4) 0;
+      margin-bottom: rem(12);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        display: none; // Removes bullet points
+      }
+    }
+  }
+}

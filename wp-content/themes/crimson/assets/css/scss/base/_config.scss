@@ -1,0 +1,108 @@
+
+/*
+Bootstrap config
+ */
+
+/*Global Options*/
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+
+/*Grid*/
+$grid-gutter-width: 50px;
+
+/*Breakpoints*/
+$grid-breakpoints: (
+	xs: 0,
+	ms: 375px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1500px
+); // Add 'ms' & 'xxl' breakpoint to target smaller devices
+
+/*Container Widths*/
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1250px
+);
+
+/*Colors*/
+//$primary: $color-blue;
+
+/*Fonts*/
+$font-size-base: 1rem;
+$font-size-sm: ($font-size-base * 0.875); // 14px
+$font-size-md: ($font-size-base * 1.6); // 22px
+$font-size-lg: ($font-size-base * 2.6666666666666665); // 48px
+$font-size-xlg: ($font-size-base * 3.2); // 90px
+
+/*Forms*/
+$input-padding-y: .75rem;
+$input-padding-x: .75rem;
+$input-focus-width: .1em;
+$input-border-width: 0;
+$input-bg: #fcf9f7;
+//$input-focus-bg: $color-gray-med;
+//$input-focus-border-color: $primary;
+//$input-border-color: $color-gray-dark;
+$form-group-margin-bottom: rem(15);
+//$input-focus-border-color: $color-blue;
+$input-focus-box-shadow: none;
+$input-transition: all .3s ease;
+
+/*Placeholders*/
+//$input-placeholder-color: $color-tan-dark;
+
+/*Buttons*/
+$btn-box-shadow: none;
+$btn-padding-y: .907rem;
+$btn-padding-x: 1rem;
+$btn-border-width: 0;
+$btn-transition: all .3s ease;
+
+/*Form Small Text*/
+$form-text-margin-top: 0;
+
+/*Breadcrumbs*/
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-item-padding: rem(5);
+$breadcrumb-margin-bottom: rem(30);
+$breadcrumb-bg: transparent;
+//$breadcrumb-divider-color: $color-gray-med;
+//$breadcrumb-active-color: $color-gray-med;
+$breadcrumb-divider: "/";
+
+/*Pagination*/
+//$pagination-color: $color-gray-dark;
+$pagination-border-color: none;
+$pagination-hover-bg: transparent;
+//$pagination-hover-color: $primary;
+//$pagination-active-color: $primary;
+$pagination-active-bg: none;
+
+/*Blockquotes*/
+$blockquote-font-size: $font-size-md;
+
+/*Navs*/
+$nav-link-padding-y: .5rem;
+$nav-link-padding-x: .9rem;
+
+/*Navbar*/
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-x: .9rem;
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-padding-x: 0;
+
+/*Pills*/
+//$nav-pills-link-active-color: $color-gray-dark;
+$nav-pills-link-active-bg: transparent;
+
+/*Dropdown*/
+$dropdown-link-hover-bg: transparent;

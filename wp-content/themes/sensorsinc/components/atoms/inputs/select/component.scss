@@ -1,0 +1,27 @@
+.input {
+  &--selectbox {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 100%;
+    border: var(--brdr-xxs) solid var(--color-base-dark);
+    background-color: transparent;
+    background-image: url("../images/ico-carat-down.svg");
+    background-repeat: no-repeat;
+    background-position: right rem(12) center;
+    padding-left: rem(22);
+    padding-right: rem(54);
+    color: var(--color-base-dark);
+    cursor: pointer;
+
+    &:focus {
+      color: var(--color-base-darker);
+      background-color: var(--color-base-lightest);
+    }
+  }
+}
+
+// Removes default dropdown arrow in IE
+select::-ms-expand {
+  display: none;
+}

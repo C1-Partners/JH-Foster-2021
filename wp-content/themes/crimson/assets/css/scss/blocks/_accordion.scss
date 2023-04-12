@@ -1,0 +1,143 @@
+/* Styles for Image & Accordion Block */
+
+.block-accordion {
+
+    .accordion-block {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .accordion-title {
+
+            @include media-breakpoint-up(lg) {
+                margin-top:0;
+            }
+        }
+
+        .accordion {
+
+            .accordion-item {
+                background-color: $color-white;
+                margin: 10px 0 10px;
+
+                @include transition();
+
+                &:hover {
+                    
+                    .accordion-body {
+                        background-color: $color-white;
+                    }
+                }
+
+                .accordion-header {
+                    
+                    > a {
+                        border-radius: 5px;
+                    }
+
+                    .toggle {
+                        display:block;
+                        background-color: $color-primary;
+                        color: $color-white;
+                        padding: 15px;
+
+                        &:hover {
+                            background-color: $color-primary!important;
+
+
+                            .title {
+                                color:$color-white;
+                                margin: 0 29px 0 0;
+
+                                @include transition();
+                            }
+
+                            .plus {
+
+                                .horizontal, .vertical {
+                                    background-color: $color-white!important;
+
+                                    @include transition();
+                                }
+                            }
+                        }
+
+                        .title-outer {
+
+                            //styles for opened accordion 
+                            .plus {
+                                position: relative;
+                                
+                                .horizontal {
+                                    width: 18px;
+                                    height: 2px;
+                                    background-color: $color-white;
+                                    position: absolute;
+                                    right: 7px;
+                                    top: 12px;
+                                    transition: .4s;
+                                }
+
+                                .vertical {
+                                    width: 2px;
+                                    height: 18px;
+                                    background-color: $color-white;
+                                    position: absolute;
+                                    right: 15px;
+                                    top: 4px;
+                                    transition: .4s;
+                                    transform: rotate(90deg);
+                                }
+                            }
+
+                            .title {
+                                margin: 0 29px 0 0;
+                                font-size: 1.8rem;
+                                color: $color-white;
+                            }
+                        }
+
+                        //styles for collapsed accordion element
+                        &.collapsed {
+                            background-color: $color-primary;
+                            color: $color-primary;
+
+                            .title-outer {
+
+                                .plus {
+                                    position: relative;
+                                    
+                                    .horizontal {
+                                        width: 18px;
+                                        height: 2px;
+                                        background-color: $color-white;
+                                        position: absolute;
+                                        right: 7px;
+                                        top: 12px;
+                                        transition: .4s;
+                                    }
+    
+                                    .vertical {
+                                        width: 2px;
+                                        height: 18px;
+                                        background-color: $color-white;
+                                        position: absolute;
+                                        right: 15px;
+                                        top: 4px;
+                                        transition: .4s;
+                                        transform: rotate(0deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accordion-body {
+                    flex: 1 1 auto;
+                    padding: 1.25rem;
+                }
+            }
+        }
+    }
+}
