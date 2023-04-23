@@ -15,6 +15,8 @@ function crimson_acf_init()
       array( 'showcase', 'Product Showcase Block ', 'Display Vendor Products', 'shield', array('product', 'showcase') ),
       array( 'two-col-content', 'Two Column Content Block ', 'Two Column', 'shield', array('col', 'two column') ),
       array( 'logo-slider', 'Vendor Logo Slider', 'Vendor Logos', 'shield', array('slider', 'vendor logos') ),
+      array( 'robotcalc-v2', 'Robot VS FTE Block V2', 'Calculator Block', 'shield', array('robot', 'full time employee', 'robot vs fte') ),
+      array( 'logo-slider', 'Vendor Logo Slider', 'Vendor Logos', 'shield', array('slider', 'vendor logos') ),
       array( 'cta', 'CTA Block', 'Call to action', 'shield', array('cta', 'call to action') ),
       array( 'cta-alt', 'Alternate CTA Block', 'Call to action', 'shield', array('cta', 'call to action') ),
       array( 'robot-fte-calc', 'Robot VS FTE Block', 'Calculator Block', 'shield', array('robot', 'full time employee', 'robot vs fte') ),

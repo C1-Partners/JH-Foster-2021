@@ -27,3 +27,4 @@ require('./app/global');
 require('./app/autopopulate');
 require('./app/checkboxpopulate');
 require('./app/robotcalculator');
+require('./app/robotcalc-v2');
