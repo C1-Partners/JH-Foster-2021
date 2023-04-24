@@ -1,0 +1,196 @@
+.block-robot-fte-v2 {
+
+    .settings {
+        background-color: #c3c3c3;
+        padding: 3rem 1.5rem;
+        border-radius: 5px;
+        margin-left: 0;
+        margin-right:0;
+        box-shadow: 7px 9px 40px -14px #000;
+        border: 2px solid $color-primary;
+    }
+
+    h3 {
+        border-bottom: 2px solid $color-primary;
+    }
+    
+
+    form {
+        background-color: $color-xlight-gray;
+        box-shadow: 7px 9px 40px -14px #000;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        padding: 20px 10px;
+        border: 2px solid $color-primary;
+
+        input {
+            width: 100%;
+            border: 0;
+            border-radius: 6px;
+            padding: 7px;
+        }
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+      }
+      table td input {
+        width: 100%;
+    }
+      
+      table caption {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+      }
+      
+      table tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: .35em;
+        text-transform: uppercase;
+      }
+      
+      table th,
+      table td {
+        padding: .625em;
+        text-align: center;
+        font-size: .85em;
+      }
+      
+      table td {
+        padding: 0.625em;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+      
+      @media screen and (max-width: 600px) {
+        table {
+          border: 0;
+        }
+        table td input {
+            width: 100%;
+        }
+      
+        table caption {
+          font-size: 1.3em;
+        }
+        
+        table thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        
+        table tr {
+          border-bottom: 3px solid #ddd;
+          display: block;
+          margin-bottom: .625em;
+        }
+        
+        table td {
+          border-bottom: 1px solid #ddd;
+          display: block;
+          font-size: .8em;
+          text-align: right;
+          padding: 0.625em;
+          text-align: center;
+          border: 1px solid #ccc;
+        }
+
+        table td::before {
+          /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        
+        table td:last-child {
+          border-bottom: 0;
+        }
+      }
+      
+
+    .read-only {
+        background-color: #8e8d8d;
+        color: #fff;
+    }
+
+    .robot-settings, .fte-settings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fte-settings {
+        border-left: 1px solid $color-white;
+    }
+
+    .btn-row {
+        text-align: center;
+    }
+
+    label, input {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        box-shadow: 15px 15px 34px -17px #000;
+        font-size: 1.1rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.7rem
+        }
+    }
+
+    .year-label {
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: bold;
+    }
+
+    tr .table-header {
+        &:not(:first-child) {
+            font-size: 1.4rem;
+            padding: 6px;
+            border-left: 1px solid white;
+            text-align: center;
+        }
+    }
+
+    table, td {
+        border: 1px solid #333;
+    }
+
+    td {
+        text-align: center;
+        padding: 6px 0;
+
+        @include media-breakpoint-up(md) {
+            padding: 6px;
+        }
+    }
+
+    tr {
+        position: relative;
+    }
+
+    thead, tfoot {
+        background-color: #333;
+        color: #fff;
+    }
+}
