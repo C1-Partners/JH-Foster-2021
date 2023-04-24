@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
             robotVsEmpCostHr3 = document.getElementById('ftvrch3'),
             robotVsEmpCostUnit3 = document.getElementById('ftvrcu3'),
 
-
-
             empInflation3 = document.getElementById('inf3');
 
     // Updates costs  when user adjusts costs inputs
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         empCostHr2.value = roundToTwo(stingToInteger(empCost2.value)/stingToInteger(empYrHrs2.value));
         empCostUnit2.value = roundToTwo(stingToInteger(empCostHr2.value)/stingToInteger(empUnitsHr2.value));
         // robot vs employee result values
-        robotVsEmpCost2.value = roundToTwo(stingToInteger(robotCost2.value) - stingToInteger(empCost2.value));
+        robotVsEmpCost2.value = numberWithCommas(stingToInteger(robotCost2.value) - stingToInteger(empCost2.value));
         robotVsEmpCostHr2.value = roundToTwo(stingToInteger(robotCostHr2.value) - stingToInteger(empCostHr2.value));
         robotVsEmpCostUnit2.value = numberWithCommas(stingToInteger(robotCostUnit2.value) - stingToInteger(empCostUnit2.value));
 
@@ -179,10 +177,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     //changes to employee inflation
     [empInflation2, empInflation3].forEach( input => {
-        empInflation2.addEventListener('change', () => {
-            console.log('hello');
+        input.addEventListener('change', () => {
             yearTwo();
-            
+            yearThree();
         });
     });
 

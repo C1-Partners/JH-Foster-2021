@@ -1,6 +1,6 @@
 
-<section class="block-robot-fte" id="robotCalv2">
-        <div class="row">
+<section class="block-robot-fte-v2" id="robotCalv2">
+        <div class="row settings">
             <div class="robot-settings col-md-6">
                 <p class="as-h3">Robot</p>
                 <div>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div> 
-        <div class="row">
+        <div class="row mx-0">
         <?php 
             $years    = 4;
             $readonly = "class='read-only' readonly";
@@ -43,7 +43,7 @@
                         <th>Cost/Hour</th>
                         <th>Units/Hour</th>
                         <th>Cost/Unit</th>
-                        <th>Inflation/Raise</th>
+                        <th>Inflation / Raise</th>
                     </tr>
                     <tr>
                         <th>Robot</th>
