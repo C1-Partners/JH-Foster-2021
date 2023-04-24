@@ -11,5 +11,6 @@ jobs:
     - name: GitHub Action Deploy to WP Engine
       uses: wpengine/github-action-wpe-site-deploy@v3
       with:
+        WPE_SSHG_KEY_PUBLIC: ${{ secrets.PUBLIC_KEY }}
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.PRIVATE_KEY }} 
         WPE_ENV: jhfoster
