@@ -43,7 +43,7 @@
                         <th>Cost/Hour</th>
                         <th>Units/Hour</th>
                         <th>Cost/Unit</th>
-                        <th>Inflation / Raise</th>
+                        <th>Inflation / Raise (%)</th>
                     </tr>
                     <tr>
                         <th>Robot</th>
@@ -62,7 +62,7 @@
                         <td><input type='text' name='ftecost hour' id='ftech{$i}' value='0' $readonly></td>
                         <td><input type='text' name='fteunits hour' id='fteuh{$i}' value='1' " . ($i<2 ? "" : $readonly)."></td>
                         <td><input type='text' name='ftecost unit' id='ftecu{$i}' value='0' $readonly></td>
-                        <td><input type='text' name='inflation' id='inf{$i}' value='0' " . ($i>1 ? "" : $readonly)."></td>
+                        <td><input type='text' name='inflation' id='inf{$i}' value='" . (($i===2 || $i===3 ) ? "0" : "")."' " . ($i>1 ? "" : $readonly)."></td>
                     </tr>
                     <tr>
                         <td>Robot Vs. Full-Time Employee</td>

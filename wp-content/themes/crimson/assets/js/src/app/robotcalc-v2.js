@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
             taxBenefits = document.getElementById('taxBenefits')
             employeeOt = document.getElementById('fteot');
 
-    const divide = (x, y) => {
-        return x/y;
-    };
-
     if(!calcBlock) {
         return
     }
@@ -43,8 +39,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             empCostHr2 = document.getElementById('ftech2'),
             empUnitsHr2 = document.getElementById('fteuh2'),
             empCostUnit2 = document.getElementById('ftecu2'),
-            // inflation year 2 - employee
-            empInflation2 = document.getElementById('inf2'),
+            
             // Year 1 Robot vs Employee inputs
             robotVsEmpCost2 = document.getElementById('ftvrc2'),
             robotVsEmpCostHr2 = document.getElementById('ftvrch2'),
@@ -67,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
             robotVsEmpCostHr3 = document.getElementById('ftvrch3'),
             robotVsEmpCostUnit3 = document.getElementById('ftvrcu3'),
 
+            // inflation year 2 - employee
+            empInflation2 = document.getElementById('inf2'),
+            // inflation year 3 - employee
             empInflation3 = document.getElementById('inf3');
 
     // Updates costs  when user adjusts costs inputs
@@ -105,13 +103,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotCostHr2.value = roundToTwo(stingToInteger(robotCost2.value)/stingToInteger(robotYrHrs2.value));
         robotCostUnit2.value = roundToTwo(stingToInteger(robotCostHr2.value)/stingToInteger(robotUnitHr2.value));
         // employee values
-        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) + stingToInteger(empCost1.value) * stingToInteger(empInflation2.value));
+        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost2.value)));
         empCostHr2.value = roundToTwo(stingToInteger(empCost2.value)/stingToInteger(empYrHrs2.value));
         empCostUnit2.value = roundToTwo(stingToInteger(empCostHr2.value)/stingToInteger(empUnitsHr2.value));
         // robot vs employee result values
         robotVsEmpCost2.value = numberWithCommas(stingToInteger(robotCost2.value) - stingToInteger(empCost2.value));
         robotVsEmpCostHr2.value = roundToTwo(stingToInteger(robotCostHr2.value) - stingToInteger(empCostHr2.value));
         robotVsEmpCostUnit2.value = numberWithCommas(stingToInteger(robotCostUnit2.value) - stingToInteger(empCostUnit2.value));
+
+
+
+        console.log(numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost2.value))));
 
       
     }
@@ -129,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotCostHr3.value = robotCostHr2.value;
         robotCostUnit3.value = robotCostUnit2.value;
         // employee values
-        empCost3.value = numberWithCommas(stingToInteger(empCost1.value) + stingToInteger(empCost1.value) * stingToInteger(empInflation3.value));
+        empCost3.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation3.value/100) * (stingToInteger(empCost3.value)))
         empCostHr3.value = roundToTwo(stingToInteger(empCost3.value)/stingToInteger(empYrHrs3.value));
         empCostUnit3.value = roundToTwo(stingToInteger(empCostHr3.value)/stingToInteger(empUnitsHr3.value));
          // robot vs employee result values
@@ -178,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     //changes to employee inflation
     [empInflation2, empInflation3].forEach( input => {
         input.addEventListener('change', () => {
+            yearOne();
             yearTwo();
             yearThree();
         });
@@ -200,6 +203,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
      // Rounding function to two decimal places
      function roundToTwo(num) {    
         return +(Math.round(num + "e+2")  + "e-2");
+    }
+
+    function truncateToDecimals(num, dec = 2) {
+        const calcDec = Math.pow(10, dec);
+        return Math.trunc(num * calcDec) / calcDec;
     }
     
     
