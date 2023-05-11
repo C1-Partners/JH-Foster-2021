@@ -7,12 +7,12 @@ $title = get_field('rs_title', 'option');
 ?>
 
 <?php if($resources): ?>
-<div class="sb-resources text-center">
+<div class="sb-resources">
     
     <?php if($title): ?>
     <h2><?php echo $title; ?></h2>
     <?php endif; ?>   
-
+    <ul>
     <?php
         foreach ($resources as $resource): 
             $link = $resource['rs_link'];
@@ -24,17 +24,17 @@ $title = get_field('rs_title', 'option');
             endif; 
     ?>
 
-        <div>
+      
             <?php if($link): ?>
-            <a  href="<?php echo esc_url( $link_url ); ?>"
-                class="my-5 d-block"
+            <li><a  href="<?php echo esc_url( $link_url ); ?>"
+                class="py-5 d-block"
                 target="<?php echo esc_attr( $link_target ); ?>">
                <?php echo esc_html( $link_title ); ?>
-            </a>
+            </a></li>
             <?php endif; ?>
-        </div>
+    
 
     <?php endforeach; ?>
-
+    </ul>
 </div>
 <?php endif; ?>

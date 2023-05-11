@@ -46,3 +46,36 @@
         }
     }
 }
+
+.sb-resources {
+    text-align: left;
+    padding: 2rem;
+    background-color: #f1f1f1;
+    margin-top: 5rem;
+    padding-bottom: 0;
+    h2 {
+        position: relative;
+        &::after {
+            content: "";
+            width: 60px;
+            height: 5px;
+            background-color: $color-primary;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    li {
+        border-bottom: 1px solid #bbbbbb;
+    }
+    li:nth-last-child(1) {
+        border-bottom: none;
+    }
+}

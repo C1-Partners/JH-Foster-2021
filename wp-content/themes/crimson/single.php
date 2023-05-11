@@ -13,7 +13,6 @@
           <div class="col-md-8">
             <?php get_template_part( 'template-parts/internal/content', 'title' ); ?>
             <?php get_template_part( 'template-parts/internal/content', 'breadcrumbs' ); ?>
-            <div class="post-thumbnail-outer"><?php if (has_post_thumbnail()) { echo get_the_post_thumbnail( $post_id, 'medium', array( 'class' => 'alignleft' )); } ?></div>
             <?php get_template_part( 'template-parts/internal/content', 'loop' ); ?>
             <div class="d-flex justify-content-center">
               <div class="mr-3"><?php previous_post_link('&laquo; %link', 'Previous Post'); ?></div>
