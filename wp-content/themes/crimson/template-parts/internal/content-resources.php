@@ -24,16 +24,17 @@ $title = get_field('rs_title', 'option');
             endif; 
     ?>
 
-      
             <?php if($link): ?>
-            <li><a  href="<?php echo esc_url( $link_url ); ?>"
-                class="py-5 d-block"
-                target="<?php echo esc_attr( $link_target ); ?>">
-               <?php echo esc_html( $link_title ); ?>
-            </a></li>
+            <li>
+                <a  href="<?php echo esc_url( $link_url ); ?>"
+                    role="link"
+                    class="py-5 d-block"
+                    target="<?php echo esc_attr( $link_target ); ?>">
+                        <?php echo esc_html( $link_title ); ?>
+                </a>
+            </li>
             <?php endif; ?>
     
-
     <?php endforeach; ?>
     </ul>
 </div>
