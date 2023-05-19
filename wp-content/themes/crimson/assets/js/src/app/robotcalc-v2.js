@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotCostHr2.value = roundToTwo(stingToInteger(robotCost2.value)/stingToInteger(robotYrHrs2.value));
         robotCostUnit2.value = roundToTwo(stingToInteger(robotCostHr2.value)/stingToInteger(robotUnitHr2.value));
         // employee values
-        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost2.value)));
+        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost1.value)));
         empCostHr2.value = roundToTwo(stingToInteger(empCost2.value)/stingToInteger(empYrHrs2.value));
         empCostUnit2.value = roundToTwo(stingToInteger(empCostHr2.value)/stingToInteger(empUnitsHr2.value));
         // robot vs employee result values
@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-        console.log(numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost2.value))));
+
+        console.log();
 
       
     }
@@ -131,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotCostHr3.value = robotCostHr2.value;
         robotCostUnit3.value = robotCostUnit2.value;
         // employee values
-        empCost3.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation3.value/100) * (stingToInteger(empCost3.value)))
+        empCost3.value = numberWithCommas(stingToInteger(empCost2.value) +  truncateToDecimals(empInflation3.value/100) * (stingToInteger(empCost2.value)))
         empCostHr3.value = roundToTwo(stingToInteger(empCost3.value)/stingToInteger(empYrHrs3.value));
         empCostUnit3.value = roundToTwo(stingToInteger(empCostHr3.value)/stingToInteger(empUnitsHr3.value));
          // robot vs employee result values
