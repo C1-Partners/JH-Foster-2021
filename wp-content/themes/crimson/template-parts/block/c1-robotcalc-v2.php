@@ -23,8 +23,10 @@
                     <input class="read-only" type="text" name="taxbenefits" id="taxBenefits" value="12,480" readonly>
                 </div>
                 <div>
-                    <label for="fteot">Overtime (1.5)</label>
-                    <input class="" type="text" name="fteot" id="fteot" value="0">
+                    <label for="fteot">Overtime (1.5)*</label>
+                    
+                    <input type="text" name="fteot" id="fteot" value="0">
+                    <label style="font-size:12px;max-width:195px;" for="fteot">*Enter Total Overtime Hours X Hourly Rate. The value is then multiplied by 1.5</label>
                 </div>
             </div>
         </div> 
