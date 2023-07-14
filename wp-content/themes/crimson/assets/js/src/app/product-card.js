@@ -121,6 +121,7 @@ jQuery(document).ready(function($) {
 
     /*
      * Export results to PDF with jsPDF
+     * Documentation: https://github.com/simonbengtsson/jsPDF-AutoTable
      */ 
     function exportProducts() {
         
@@ -199,7 +200,7 @@ jQuery(document).ready(function($) {
         }
         
         if (bodyAutomation.length !== 0) {
-            doc.text('Automation', 14, 30)
+            doc.text('Automation', 14, 60)
             doc.autoTable({
                 head: head, 
                 body: bodyAutomation,
@@ -212,13 +213,13 @@ jQuery(document).ready(function($) {
                     1: {cellWidth: 110},
                     2: {cellWidth: 40},
                 },
-                startY: 35,
+                startY: 65,
                 showHead: 'firstPage',
                 rowPageBreak: 'avoid',
-                margin: { top: 30, bottom: 30, },
+                margin: { top: 55, bottom: 30, },
                 didDrawPage: function (data) {
                     if (headerImage) {
-                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 15)
+                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 50)
                     }
 
                 var pageSize = doc.internal.pageSize
@@ -227,10 +228,10 @@ jQuery(document).ready(function($) {
                 },
             })
         }
-        let finalY = doc.lastAutoTable.finalY;
+        let finalY = doc.lastAutoTable.finalY + 20;
         if (bodyCompressedAir.length !== 0) {
             
-            doc.text('Compressed Air', 14, finalY + 10)
+            doc.text('Compressed Air', 14, finalY + 5)
             doc.autoTable({
                 head: head, 
                 body: bodyCompressedAir,
@@ -243,13 +244,13 @@ jQuery(document).ready(function($) {
                     1: {cellWidth: 110},
                     2: {cellWidth: 40},
                 },
-                startY: doc.lastAutoTable.finalY + 15,
+                startY: doc.lastAutoTable.finalY + 30,
                 showHead: 'firstPage',
                 rowPageBreak: 'avoid',
-                margin: { top: 30, bottom: 30, },
+                margin: { top: 55, bottom: 30, },
                 didDrawPage: function (data) {
                     if (headerImage) {
-                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 15)
+                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 50)
                     }
                     var pageSize = doc.internal.pageSize
                     var pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight()
@@ -261,7 +262,7 @@ jQuery(document).ready(function($) {
         let finalY2 = doc.lastAutoTable.finalY;
         if (bodyRobotics.length !== 0) {
 
-            doc.text('Robotics', 14, finalY2 + 10)
+            doc.text('Robotics', 14, finalY2 + 25)
             doc.autoTable({
                 head: head, 
                 body: bodyRobotics,
@@ -274,13 +275,13 @@ jQuery(document).ready(function($) {
                     1: {cellWidth: 110},
                     2: {cellWidth: 40},
                 },
-                startY: doc.lastAutoTable.finalY + 15,
+                startY: doc.lastAutoTable.finalY + 30,
                 showHead: 'firstPage',
                 rowPageBreak: 'avoid',
-                margin: { top: 30, bottom: 30, },
+                margin: { top: 55, bottom: 30, },
                 didDrawPage: function (data) {
                     if (headerImage) {
-                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 15)
+                      doc.addImage(headerImage, 'JPEG', 0, 0, pageWidth, 50)
                     }
                     var pageSize = doc.internal.pageSize
                     var pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight()

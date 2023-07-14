@@ -63,16 +63,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
             robotVsEmpCostUnit3 = document.getElementById('ftvrcu3'),
 
             // inflation year 2 - employee
-            empInflation2 = document.getElementById('inf2'),
+            Inflation2 = document.getElementById('inf2'),
             // inflation year 3 - employee
-            empInflation3 = document.getElementById('inf3');
+            Inflation3 = document.getElementById('inf3');
 
     // Updates costs  when user adjusts costs inputs
     function updateCostValues() {
         taxBenefits.value = numberWithCommas(parseInt(employeeSalary.value.replace(/,/g, ""), 10) * .3);
         robotInputCost.value = numberWithCommas(robotInputCost.value.replace(/,/g, ""), 10);
         employeeSalary.value = numberWithCommas(employeeSalary.value.replace(/,/g, ""), 10);
-        
     }
     // update cell values for year 1
     function yearOne() {
@@ -99,11 +98,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotUnitHr2.value = robotUnitHr1.value;
         empUnitsHr2.value = empUnitsHr1.value;
         // robot values
-        robotCost2.value = numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1));
+        robotCost2.value = numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1) + ((truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value)))));
+
+        console.log(truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value)));
+
         robotCostHr2.value = roundToTwo(stingToInteger(robotCost2.value)/stingToInteger(robotYrHrs2.value));
         robotCostUnit2.value = roundToTwo(stingToInteger(robotCostHr2.value)/stingToInteger(robotUnitHr2.value));
         // employee values
-        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(empInflation2.value/100) * (stingToInteger(empCost1.value)));
+        empCost2.value = numberWithCommas(stingToInteger(empCost1.value) +  truncateToDecimals(Inflation2.value/100) * (stingToInteger(empCost1.value)));
         empCostHr2.value = roundToTwo(stingToInteger(empCost2.value)/stingToInteger(empYrHrs2.value));
         empCostUnit2.value = roundToTwo(stingToInteger(empCostHr2.value)/stingToInteger(empUnitsHr2.value));
         // robot vs employee result values
@@ -111,12 +113,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotVsEmpCostHr2.value = roundToTwo(stingToInteger(robotCostHr2.value) - stingToInteger(empCostHr2.value));
         robotVsEmpCostUnit2.value = numberWithCommas(stingToInteger(robotCostUnit2.value) - stingToInteger(empCostUnit2.value));
 
-
-
-
-        console.log();
-
-      
     }
     yearTwo();
     // update cell values for year 3
@@ -132,15 +128,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotCostHr3.value = robotCostHr2.value;
         robotCostUnit3.value = robotCostUnit2.value;
         // employee values
-        empCost3.value = numberWithCommas(stingToInteger(empCost2.value) +  truncateToDecimals(empInflation3.value/100) * (stingToInteger(empCost2.value)))
+        empCost3.value = numberWithCommas(stingToInteger(empCost2.value) +  truncateToDecimals(Inflation3.value/100) * (stingToInteger(empCost2.value)))
         empCostHr3.value = roundToTwo(stingToInteger(empCost3.value)/stingToInteger(empYrHrs3.value));
         empCostUnit3.value = roundToTwo(stingToInteger(empCostHr3.value)/stingToInteger(empUnitsHr3.value));
-         // robot vs employee result values
-         robotVsEmpCost3.value = roundToTwo(stingToInteger(robotCost3.value) - stingToInteger(empCost3.value));
-         robotVsEmpCostHr3.value = roundToTwo(stingToInteger(robotCostHr3.value) - stingToInteger(empCostHr3.value));
-         robotVsEmpCostUnit3.value = numberWithCommas(stingToInteger(robotCostUnit3.value) - stingToInteger(empCostUnit3.value));
- 
-        
+        // robot vs employee result values
+        robotVsEmpCost3.value = roundToTwo(stingToInteger(robotCost3.value) - stingToInteger(empCost3.value));
+        robotVsEmpCostHr3.value = roundToTwo(stingToInteger(robotCostHr3.value) - stingToInteger(empCostHr3.value));
+        robotVsEmpCostUnit3.value = numberWithCommas(stingToInteger(robotCostUnit3.value) - stingToInteger(empCostUnit3.value));       
     }
     yearThree();
 
@@ -179,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     });
 
     //changes to employee inflation
-    [empInflation2, empInflation3].forEach( input => {
+    [Inflation2, Inflation3].forEach( input => {
         input.addEventListener('change', () => {
             yearOne();
             yearTwo();
