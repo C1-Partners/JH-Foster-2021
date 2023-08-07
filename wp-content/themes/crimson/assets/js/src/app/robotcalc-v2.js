@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotUnitHr2.value = robotUnitHr1.value;
         empUnitsHr2.value = empUnitsHr1.value;
         // robot values
-        robotCost2.value = numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1) + ((truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value)))));
+        robotCost2.value = numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1) + (truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value))) * (robotServiceCost.value * 1));
 
-        console.log(truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value)));
+        // console.log(numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1) + (truncateToDecimals(Inflation2.value/100) * (stingToInteger(robotCost1.value))) * (robotServiceCost.value * 1)));
 
         robotCostHr2.value = roundToTwo(stingToInteger(robotCost2.value)/stingToInteger(robotYrHrs2.value));
         robotCostUnit2.value = roundToTwo(stingToInteger(robotCostHr2.value)/stingToInteger(robotUnitHr2.value));
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
         robotUnitHr3.value = robotUnitHr1.value;
         empUnitsHr3.value = empUnitsHr1.value;
         // robot values
-        robotCost3.value = robotCost2.value;
-        robotCostHr3.value = robotCostHr2.value;
-        robotCostUnit3.value = robotCostUnit2.value;
+        robotCost3.value = numberWithCommas(stingToInteger(robotInputCost.value) * (robotServiceCost.value * 1) + (truncateToDecimals(Inflation3.value/100) * (stingToInteger(robotCost1.value))) * (robotServiceCost.value * 1));
+        robotCostHr3.value = roundToTwo(stingToInteger(robotCost3.value)/stingToInteger(robotYrHrs3.value));
+        robotCostUnit3.value = roundToTwo(stingToInteger(robotCostHr3.value)/stingToInteger(robotUnitHr3.value));
         // employee values
         empCost3.value = numberWithCommas(stingToInteger(empCost2.value) +  truncateToDecimals(Inflation3.value/100) * (stingToInteger(empCost2.value)))
         empCostHr3.value = roundToTwo(stingToInteger(empCost3.value)/stingToInteger(empYrHrs3.value));
