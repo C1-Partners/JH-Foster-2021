@@ -179,25 +179,25 @@ jQuery(document).ready(function($) {
             bodyRobotics = getSupplierDataByCategory(robotics),
             pageHeight = doc.internal.pageSize.getHeight(),
             pageWidth = doc.internal.pageSize.getWidth(),
-            coverPage = '/wp-content/themes/crimson/assets/images/productcard/cover.jpg',
-            aboutPage = '/wp-content/themes/crimson/assets/images/productcard/about.jpg',
-            headerImage = '/wp-content/themes/crimson/assets/images/productcard/plc_header.jpg',
+            // coverPage = '/wp-content/themes/crimson/assets/images/productcard/cover.jpg',
+            // aboutPage = '/wp-content/themes/crimson/assets/images/productcard/about.jpg',
+            headerImage = '/wp-content/themes/crimson/assets/images/productcard/plc_header_v2.jpg',
             footerImg = '/wp-content/themes/crimson/assets/images/productcard/plc_footer.jpg',
             y = 800,
             x = 800;
 
         // Add Coverpage
-        if (y >= pageHeight) {
-            doc.addImage(coverPage, 'JPEG', 0, 0, pageWidth, pageHeight);
-            y = 0;
-        }
+        // if (y >= pageHeight) {
+        //     doc.addImage(coverPage, 'JPEG', 0, 0, pageWidth, pageHeight);
+        //     y = 0;
+        // }
         // Add About page
-        if (x >= pageHeight) {
-            doc.addPage();
-            doc.addImage(aboutPage, 'JPEG', 0, 0, pageWidth, pageHeight);
-            doc.addPage();
-            x = 0;
-        }
+        // if (x >= pageHeight) {
+        //     doc.addPage();
+        //     doc.addImage(aboutPage, 'JPEG', 0, 0, pageWidth, pageHeight);
+        //     doc.addPage();
+        //     x = 0;
+        // }
         
         if (bodyAutomation.length !== 0) {
             doc.text('Automation', 14, 60)
